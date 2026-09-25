@@ -85,7 +85,8 @@ METRICS = [
     ("2027", "new grad · SWE / MLE", "#56d4bc"),
 ]
 
-# impact: a measurable result, e.g. "p99 latency ↓ 38%". Empty → shows "In active development".
+# impact: a measurable result, e.g. "p99 latency ↓ 38%"; if empty the card shows status instead.
+# status defaults to "In active development"; url empty → card is not linked (e.g. internal work).
 PROJECTS = [
     {
         "slug": "ai-oncall",
@@ -93,7 +94,8 @@ PROJECTS = [
         "desc": "LLM agents that triage alerts, correlate logs & metrics, and draft root-cause reports.",
         "tags": ["Python", "LangChain", "AWS Bedrock", "RAG", "MCP"],
         "impact": "",
-        "url": f"https://github.com/{USERNAME}?tab=repositories",
+        "status": "Intern Project · Finished",
+        "url": "",
     },
     {
         "slug": "echomind",
@@ -518,10 +520,15 @@ def project(i, p):
         b += text(bx + 18, 92, p["impact"], 17, GREEN, "s", 700)
     else:
         b += text(bx + 18, 60, "STATUS", 10.5, MUTED, "m", 600, extra='letter-spacing="1"')
-        b += f'<circle cx="{bx + 23}" cy="86" r="4" fill="{GREEN}"/>'
-        b += text(bx + 34, 91, "In active development", 15, TEXT, "s", 600)
+        status = p.get("status", "In active development")
+        dot = GREEN if status == "In active development" else CYAN
+        b += f'<circle cx="{bx + 23}" cy="86" r="4" fill="{dot}"/>'
+        b += text(bx + 34, 91, status, 15, TEXT, "s", 600)
     b += f'<path d="M{bx + 18} 118h{bw - 36}" stroke="{BORDER}" stroke-opacity=".3"/>'
-    b += text(bx + 18, 146, "view on GitHub  ↗", 13, CYAN, "m", 500)
+    if p["url"]:
+        b += text(bx + 18, 146, "view on GitHub  ↗", 13, CYAN, "m", 500)
+    else:
+        b += text(bx + 18, 146, "internal · code not public", 13, MUTED, "m", 500)
     return svg(W, H, b, defs)
 
 
@@ -553,10 +560,12 @@ def readme(ctas):
     buttons = "\n".join(
         f'  <a href="{esc(url)}"><img src="assets/cta-{icon}.svg" height="34" alt="{esc(label)}" /></a>'
         for label, icon, url in ctas)
-    projects = "\n\n".join(
-        f'<a href="{esc(p["url"])}"><img src="assets/project-{p["slug"]}.svg" width="100%" '
-        f'alt="{esc(p["name"])} — {esc(p["desc"])} ({esc(", ".join(p["tags"]))})" /></a>'
-        for p in PROJECTS)
+    def project_img(p):
+        img = (f'<img src="assets/project-{p["slug"]}.svg" width="100%" '
+               f'alt="{esc(p["name"])} — {esc(p["desc"])} ({esc(", ".join(p["tags"]))})" />')
+        return f'<a href="{esc(p["url"])}">{img}</a>' if p["url"] else img
+
+    projects = "\n\n".join(project_img(p) for p in PROJECTS)
     if SHOW_STATS:
         skills_row = (f'<img src="assets/github-stats.svg" width="49.9%" alt="GitHub stats for @{USERNAME}" />'
                       f'<img src="assets/skills.svg" width="49.9%" alt="{esc(skills_alt)}" />')
