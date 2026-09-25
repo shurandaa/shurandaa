@@ -10,7 +10,7 @@
 
 <img src="assets/current-focus.svg" width="66.6%" alt="$ whoami — MSCS @ Northeastern University, Seattle · Amazon SDE Intern. $ current_focus — Building AI-native developer infrastructure; Working on LLM agents and distributed systems; Researching applied AI / multimodal systems; Learning Rust, systems design, and high-performance inference; Preparing for 2027 New Grad SWE / MLE roles. $ stack — Java / Python / Rust / Go / TypeScript / AWS" /><img src="assets/mascot.svg" width="33.3%" alt="Pixel-art cat coding on a laptop" />
 
-<img src="assets/github-stats.svg" width="49.9%" alt="GitHub stats for @shurandaa" /><img src="assets/skills.svg" width="49.9%" alt="Languages: Java, Python, Kotlin, C++, Go, Rust, TypeScript, SQL | Backend / Systems: Spring Boot, Node.js, Redis, PostgreSQL, Docker, REST | AI: LLM, RAG, LangChain, AWS Bedrock, MCP, Agent Systems | Cloud: AWS, SageMaker, EMR" />
+<img src="assets/skills.svg" width="100%" alt="Languages: Java, Python, Kotlin, C++, Go, Rust, TypeScript, SQL | Backend / Systems: Spring Boot, Node.js, Redis, PostgreSQL, Docker, REST | AI: LLM, RAG, LangChain, AWS Bedrock, MCP, Agent Systems | Cloud: AWS, SageMaker, EMR" />
 
 <img src="assets/metrics.svg" width="100%" alt="500+ DSA problems solved · 2+ yrs engineering experience · AI Infra &amp; distributed systems · 2027 new grad · SWE / MLE" />
 
@@ -25,7 +25,5 @@
 <img src="assets/section-experience.svg" width="100%" alt="Experience" />
 
 <img src="assets/experience.svg" width="100%" alt="Amazon — SDE Intern: AI infrastructure &amp; distributed systems · automated incident investigation · significantly reduced triage effort | Northeastern University — Research: Applied AI &amp; multimodal systems" />
-
-<sub><code>stats refresh daily via GitHub Actions</code></sub>
 
 </div>
