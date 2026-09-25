@@ -89,7 +89,7 @@
 
   <!-- text -->
   <text x="60" y="100" class="title">Hi there, I'm Shuran!</text>
-  <text x="62" y="140" class="sub">Northeastern University · Coding &amp; Creating</text>
+  <text x="62" y="140" class="sub">MS CS @ Northeastern · Seattle · AI Agents</text>
   <rect x="60" y="160" width="260" height="36" rx="18" fill="#8B6F47" class="line" stroke-width="3"/>
   <text x="190" y="184" text-anchor="middle" class="pill">Welcome to my cozy corner</text>
 
