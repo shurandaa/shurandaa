@@ -88,6 +88,7 @@ METRICS = [
 # impact: a measurable result, e.g. "p99 latency ↓ 38%"; if empty the card shows status instead.
 # status defaults to "In active development"; url empty → card is not linked (e.g. internal work).
 # link_label defaults to "view on GitHub  ↗" (e.g. use "read the case study  ↗" for a write-up).
+# Optional: impact_label (default "IMPACT"), impact_note (small line under the impact), with (collaborator credit).
 PROJECTS = [
     {
         "slug": "ai-oncall",
@@ -104,7 +105,10 @@ PROJECTS = [
         "name": "facial-dynamics · Semantic Tokens for Facial Expressions",
         "desc": "Readable, editable text tokens for facial expressions: encode, edit meaning, decode.",
         "tags": ["Python", "MediaPipe", "ARKit Blendshapes", "Multimodal", "Semantic Codec"],
-        "impact": "",
+        "impact": "MAE 0.0136 · 0.92°",
+        "impact_label": "L1 ROUND-TRIP ERROR",
+        "impact_note": "206 speakers · in progress",
+        "with": "@TianWang0810",
         "status": "Currently working on",
         "url": "https://github.com/TianWang0810/facial-dynamics/blob/main/README.md",
     },
@@ -518,7 +522,8 @@ def project(i, p):
     b = card(M, M, W - 2 * M, H - 2 * M)
     b += f'<rect x="{M}" y="{M + 22}" width="3" height="{H - 2 * M - 44}" rx="1.5" fill="url(#bar)"/>'
     x = 36
-    b += text(x, 44, f"{i:02d} / FEATURED PROJECT", 11, MUTED, "m", 500, extra='letter-spacing="1.2"')
+    label = f"{i:02d} / FEATURED PROJECT" + (f" · with {p['with']}" if p.get("with") else "")
+    b += text(x, 44, label, 11, MUTED, "m", 500, extra='letter-spacing="1.2"')
     b += text(x, 80, p["name"], 23, TEXT, "s", 700)
     b += text(x, 110, p["desc"], 15, MUTED)
     b += pill_row(x, 134, p["tags"], gap=7, size=12, h=26)
@@ -527,8 +532,10 @@ def project(i, p):
     b += (f'<rect x="{bx}" y="30" width="{bw}" height="{H - 60}" rx="8" fill="{TILE_BG}" stroke="{BORDER}" '
           f'stroke-opacity=".35"/>\n')
     if p["impact"]:
-        b += text(bx + 18, 60, "IMPACT", 10.5, MUTED, "m", 600, extra='letter-spacing="1"')
-        b += text(bx + 18, 92, p["impact"], 17, GREEN, "s", 700)
+        b += text(bx + 18, 60, p.get("impact_label", "IMPACT"), 10.5, MUTED, "m", 600, extra='letter-spacing="1"')
+        b += text(bx + 18, 88, p["impact"], 17, GREEN, "s", 700)
+        if p.get("impact_note"):
+            b += text(bx + 18, 107, p["impact_note"], 12, MUTED, "m")
     else:
         b += text(bx + 18, 60, "STATUS", 10.5, MUTED, "m", 600, extra='letter-spacing="1"')
         status = p.get("status", "In active development")

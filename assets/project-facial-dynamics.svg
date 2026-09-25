@@ -5,7 +5,7 @@
 <linearGradient id="bar" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#00b7ff"/><stop offset="1" stop-color="#a371f7"/></linearGradient></defs>
 <rect x="6" y="6" width="988" height="184" rx="10" stroke="#00b7ff" stroke-opacity=".35" stroke-width="2" filter="url(#glow)"/>
 <rect x="6" y="6" width="988" height="184" rx="10" fill="#0a1424" stroke="#1f6feb" stroke-opacity=".75"/>
-<rect x="6" y="28" width="3" height="140" rx="1.5" fill="url(#bar)"/><text x="36" y="44" class="m" font-size="11" font-weight="500" fill="#8b949e" text-anchor="start" letter-spacing="1.2">02 / FEATURED PROJECT</text>
+<rect x="6" y="28" width="3" height="140" rx="1.5" fill="url(#bar)"/><text x="36" y="44" class="m" font-size="11" font-weight="500" fill="#8b949e" text-anchor="start" letter-spacing="1.2">02 / FEATURED PROJECT · with @TianWang0810</text>
 <text x="36" y="80" class="s" font-size="23" font-weight="700" fill="#e6edf3" text-anchor="start" >facial-dynamics · Semantic Tokens for Facial Expressions</text>
 <text x="36" y="110" class="s" font-size="15" font-weight="400" fill="#8b949e" text-anchor="start" >Readable, editable text tokens for facial expressions: encode, edit meaning, decode.</text>
 <rect x="36" y="134" width="65.2" height="26" rx="8" fill="#0d1b30" fill-opacity="1" stroke="#1f6feb" stroke-opacity=".6"/>
@@ -19,8 +19,9 @@
 <rect x="454.4" y="134" width="122.8" height="26" rx="8" fill="#0d1b30" fill-opacity="1" stroke="#1f6feb" stroke-opacity=".6"/>
 <text x="515.8" y="151.32" class="m" font-size="12" font-weight="500" fill="#c9d1d9" text-anchor="middle" >Semantic Codec</text>
 <rect x="716" y="30" width="250" height="136" rx="8" fill="#0d1b30" stroke="#1f6feb" stroke-opacity=".35"/>
-<text x="734" y="60" class="m" font-size="10.5" font-weight="600" fill="#8b949e" text-anchor="start" letter-spacing="1">STATUS</text>
-<circle cx="739" cy="86" r="4" fill="#3fb950"/><text x="750" y="91" class="s" font-size="15" font-weight="600" fill="#e6edf3" text-anchor="start" >Currently working on</text>
+<text x="734" y="60" class="m" font-size="10.5" font-weight="600" fill="#8b949e" text-anchor="start" letter-spacing="1">L1 ROUND-TRIP ERROR</text>
+<text x="734" y="88" class="s" font-size="17" font-weight="700" fill="#3fb950" text-anchor="start" >MAE 0.0136 · 0.92°</text>
+<text x="734" y="107" class="m" font-size="12" font-weight="400" fill="#8b949e" text-anchor="start" >206 speakers · in progress</text>
 <path d="M734 118h214" stroke="#1f6feb" stroke-opacity=".3"/><text x="734" y="146" class="m" font-size="13" font-weight="500" fill="#00b7ff" text-anchor="start" >view on GitHub  ↗</text>
 
 </svg>
