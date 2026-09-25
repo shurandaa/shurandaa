@@ -100,6 +100,15 @@ PROJECTS = [
         "link_label": "read the case study  ↗",
     },
     {
+        "slug": "facial-dynamics",
+        "name": "facial-dynamics · Semantic Tokens for Facial Expressions",
+        "desc": "Readable, editable text tokens for facial expressions: encode, edit meaning, decode.",
+        "tags": ["Python", "MediaPipe", "ARKit Blendshapes", "Multimodal", "Semantic Codec"],
+        "impact": "",
+        "status": "Currently working on",
+        "url": "https://github.com/TianWang0810/facial-dynamics/blob/main/README.md",
+    },
+    {
         "slug": "echomind",
         "name": "EchoMind · Multi-Agent Runtime",
         "desc": "A runtime for orchestrating tool-using agents with shared memory, planning, and tracing.",
@@ -523,7 +532,7 @@ def project(i, p):
     else:
         b += text(bx + 18, 60, "STATUS", 10.5, MUTED, "m", 600, extra='letter-spacing="1"')
         status = p.get("status", "In active development")
-        dot = GREEN if status == "In active development" else CYAN
+        dot = CYAN if "Finished" in status else GREEN
         b += f'<circle cx="{bx + 23}" cy="86" r="4" fill="{dot}"/>'
         b += text(bx + 34, 91, status, 15, TEXT, "s", 600)
     b += f'<path d="M{bx + 18} 118h{bw - 36}" stroke="{BORDER}" stroke-opacity=".3"/>'
