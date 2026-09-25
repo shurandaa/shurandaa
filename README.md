@@ -18,6 +18,8 @@
 
 <a href="https://github.com/shurandaa/shurandaa/blob/main/projects/ai-oncall.md"><img src="assets/project-ai-oncall.svg" width="100%" alt="AI On-Call · Incident Investigation Platform — Multi-agent system that auto-investigates CI/CD failures, from alarm to one-click fix. (AWS Bedrock, MCP, AWS CDK, Slack, Multi-Agent)" /></a>
 
+<a href="https://github.com/TianWang0810/facial-dynamics/blob/main/README.md"><img src="assets/project-facial-dynamics.svg" width="100%" alt="facial-dynamics · Semantic Tokens for Facial Expressions — Readable, editable text tokens for facial expressions: encode, edit meaning, decode. (Python, MediaPipe, ARKit Blendshapes, Multimodal, Semantic Codec)" /></a>
+
 <a href="https://github.com/shurandaa?tab=repositories"><img src="assets/project-echomind.svg" width="100%" alt="EchoMind · Multi-Agent Runtime — A runtime for orchestrating tool-using agents with shared memory, planning, and tracing. (Python, Multi-Agent, MCP, Redis, Docker)" /></a>
 
 <a href="https://github.com/shurandaa?tab=repositories"><img src="assets/project-inference-gateway.svg" width="100%" alt="High-Performance AI Inference Gateway — An OpenAI-compatible gateway with request batching, caching, routing, and rate limiting. (Rust, Go, Redis, Docker, gRPC)" /></a>
