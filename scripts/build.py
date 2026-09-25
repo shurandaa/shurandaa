@@ -92,8 +92,8 @@ PROJECTS = [
     {
         "slug": "ai-oncall",
         "name": "AI On-Call · Incident Investigation Platform",
-        "desc": "LLM agents that triage alerts, correlate logs & metrics, and draft root-cause reports.",
-        "tags": ["Python", "LangChain", "AWS Bedrock", "RAG", "MCP"],
+        "desc": "Multi-agent system that auto-investigates CI/CD failures, from alarm to one-click fix.",
+        "tags": ["AWS Bedrock", "MCP", "AWS CDK", "Slack", "Multi-Agent"],
         "impact": "",
         "status": "Intern Project · Finished",
         "url": f"https://github.com/{USERNAME}/{USERNAME}/blob/main/projects/ai-oncall.md",
