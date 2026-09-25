@@ -20,7 +20,7 @@
 <text x="382.59999999999997" y="151.32" class="m" font-size="12" font-weight="500" fill="#c9d1d9" text-anchor="middle" >MCP</text>
 <rect x="716" y="30" width="250" height="136" rx="8" fill="#0d1b30" stroke="#1f6feb" stroke-opacity=".35"/>
 <text x="734" y="60" class="m" font-size="10.5" font-weight="600" fill="#8b949e" text-anchor="start" letter-spacing="1">STATUS</text>
-<circle cx="739" cy="86" r="4" fill="#3fb950"/><text x="750" y="91" class="s" font-size="15" font-weight="600" fill="#e6edf3" text-anchor="start" >In active development</text>
-<path d="M734 118h214" stroke="#1f6feb" stroke-opacity=".3"/><text x="734" y="146" class="m" font-size="13" font-weight="500" fill="#00b7ff" text-anchor="start" >view on GitHub  ↗</text>
+<circle cx="739" cy="86" r="4" fill="#00b7ff"/><text x="750" y="91" class="s" font-size="15" font-weight="600" fill="#e6edf3" text-anchor="start" >Intern Project · Finished</text>
+<path d="M734 118h214" stroke="#1f6feb" stroke-opacity=".3"/><text x="734" y="146" class="m" font-size="13" font-weight="500" fill="#8b949e" text-anchor="start" >internal · code not public</text>
 
 </svg>
