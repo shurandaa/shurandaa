@@ -114,11 +114,13 @@ PROJECTS = [
     },
     {
         "slug": "echomind",
-        "name": "EchoMind · Multi-Agent Runtime",
-        "desc": "A runtime for orchestrating tool-using agents with shared memory, planning, and tracing.",
-        "tags": ["Python", "Multi-Agent", "MCP", "Redis", "Docker"],
+        "name": "EchoMind · Multi-Agent Customer Support",
+        "desc": "Multi-agent support runtime: intent fusion, agent routing, RAG, memory, LLM-as-Judge.",
+        "tags": ["Python", "FastAPI", "Claude", "Redis", "ChromaDB"],
         "impact": "",
-        "url": f"https://github.com/{USERNAME}?tab=repositories",
+        "status": "Live demo",
+        "url": "https://54.209.58.120.sslip.io",
+        "link_label": "try the live demo  ↗",
     },
     {
         "slug": "inference-gateway",
