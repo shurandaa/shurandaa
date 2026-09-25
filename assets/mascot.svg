@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="340" height="320" viewBox="0 0 340 320" fill="none">
+<defs>
+<filter id="glow" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="3"/></filter>
+<style>.s{font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif}.m{font-family:ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace}</style>
+</defs>
+<rect x="6" y="6" width="328" height="308" rx="10" stroke="#00b7ff" stroke-opacity=".35" stroke-width="2" filter="url(#glow)"/>
+<rect x="6" y="6" width="328" height="308" rx="10" fill="#0a1424" stroke="#1f6feb" stroke-opacity=".75"/>
+<text x="26" y="38" class="m" font-size="11" font-weight="600" fill="#8b949e" text-anchor="start" letter-spacing="1.5">SYSTEM MAP</text>
+<circle cx="274" cy="34" r="3.5" fill="#3fb950"><animate attributeName="opacity" values="1;.35;1" dur="2.4s" repeatCount="indefinite"/></circle><text x="314" y="38" class="m" font-size="11" font-weight="600" fill="#3fb950" text-anchor="end" letter-spacing="1.5">LIVE</text>
+<path d="M170.0 148 L64 88" stroke="#1f6feb" stroke-opacity=".55" stroke-dasharray="3 4"/>
+<circle r="2.6" fill="#00b7ff"><animateMotion dur="3s" begin="-0.0s" repeatCount="indefinite" path="M170.0 148 L64 88"/></circle>
+<path d="M170.0 148 L276 88" stroke="#1f6feb" stroke-opacity=".55" stroke-dasharray="3 4"/>
+<circle r="2.6" fill="#00b7ff"><animateMotion dur="3s" begin="-0.75s" repeatCount="indefinite" path="M170.0 148 L276 88"/></circle>
+<path d="M170.0 148 L64 208" stroke="#1f6feb" stroke-opacity=".55" stroke-dasharray="3 4"/>
+<circle r="2.6" fill="#00b7ff"><animateMotion dur="3s" begin="-1.5s" repeatCount="indefinite" path="M170.0 148 L64 208"/></circle>
+<path d="M170.0 148 L276 208" stroke="#1f6feb" stroke-opacity=".55" stroke-dasharray="3 4"/>
+<circle r="2.6" fill="#00b7ff"><animateMotion dur="3s" begin="-2.25s" repeatCount="indefinite" path="M170.0 148 L276 208"/></circle>
+<rect x="34" y="74" width="60" height="28" rx="7" fill="#0d1b30" stroke="#1f6feb" stroke-opacity=".7"/>
+<text x="64" y="92.5" class="m" font-size="12" font-weight="600" fill="#e6edf3" text-anchor="middle" >RAG</text>
+<rect x="246" y="74" width="60" height="28" rx="7" fill="#0d1b30" stroke="#1f6feb" stroke-opacity=".7"/>
+<text x="276" y="92.5" class="m" font-size="12" font-weight="600" fill="#e6edf3" text-anchor="middle" >MCP</text>
+<rect x="34" y="194" width="60" height="28" rx="7" fill="#0d1b30" stroke="#1f6feb" stroke-opacity=".7"/>
+<text x="64" y="212.5" class="m" font-size="12" font-weight="600" fill="#e6edf3" text-anchor="middle" >GPU</text>
+<rect x="246" y="194" width="60" height="28" rx="7" fill="#0d1b30" stroke="#1f6feb" stroke-opacity=".7"/>
+<text x="276" y="212.5" class="m" font-size="12" font-weight="600" fill="#e6edf3" text-anchor="middle" >MEM</text>
+<g stroke="#00b7ff" stroke-opacity=".7" stroke-width="2" stroke-linecap="round"><path d="M149.0 102.0v8M149.0 186.0v8M124.0 127h8M208.0 127h8"/><path d="M163.0 102.0v8M163.0 186.0v8M124.0 141h8M208.0 141h8"/><path d="M177.0 102.0v8M177.0 186.0v8M124.0 155h8M208.0 155h8"/><path d="M191.0 102.0v8M191.0 186.0v8M124.0 169h8M208.0 169h8"/></g>
+<rect x="132.0" y="110.0" width="76" height="76" rx="12" fill="#0d1b30" stroke="#00b7ff" stroke-width="1.6"/>
+<rect x="140.0" y="118.0" width="60" height="60" rx="7" stroke="#a371f7" stroke-opacity=".5"/>
+<text x="170.0" y="154" class="m" font-size="17" font-weight="700" fill="#e6edf3" text-anchor="middle" >LLM</text>
+<text x="170.0" y="272" class="s" font-size="16" font-weight="700" fill="#e6edf3" text-anchor="middle" >Shuran Zhao</text>
+<text x="170.0" y="294" class="m" font-size="12" font-weight="400" fill="#8b949e" text-anchor="middle" >agents · infra · inference</text>
+
+</svg>
