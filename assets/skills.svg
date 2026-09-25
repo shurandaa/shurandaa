@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="330" viewBox="0 0 500 330" fill="none">
+<defs>
+<filter id="glow" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="3"/></filter>
+<style>.s{font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif}.m{font-family:ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace}</style>
+</defs>
+<rect x="6" y="6" width="488" height="318" rx="10" stroke="#00b7ff" stroke-opacity=".35" stroke-width="2" filter="url(#glow)"/>
+<rect x="6" y="6" width="488" height="318" rx="10" fill="#0a1424" stroke="#1f6feb" stroke-opacity=".75"/>
+<text x="28" y="44" class="s" font-size="17" font-weight="700" fill="#e6edf3" text-anchor="start" >Tech Stack &amp; Skills</text>
+<circle cx="32" cy="72" r="3" fill="#58a6ff"/><text x="42" y="76" class="m" font-size="10.5" font-weight="600" fill="#58a6ff" text-anchor="start" letter-spacing=".8">LANGUAGES</text>
+<rect x="28" y="86" width="41.6" height="25" rx="8" fill="#58a6ff" fill-opacity="0.08" stroke="#58a6ff" stroke-opacity=".6"/>
+<text x="48.8" y="102.64" class="m" font-size="11.5" font-weight="500" fill="#e6edf3" text-anchor="middle" >Java</text>
+<rect x="75.6" y="86" width="55.4" height="25" rx="8" fill="#58a6ff" fill-opacity="0.08" stroke="#58a6ff" stroke-opacity=".6"/>
+<text x="103.3" y="102.64" class="m" font-size="11.5" font-weight="500" fill="#e6edf3" text-anchor="middle" >Python</text>
+<rect x="137.0" y="86" width="55.4" height="25" rx="8" fill="#58a6ff" fill-opacity="0.08" stroke="#58a6ff" stroke-opacity=".6"/>
+<text x="164.7" y="102.64" class="m" font-size="11.5" font-weight="500" fill="#e6edf3" text-anchor="middle" >Kotlin</text>
+<rect x="198.4" y="86" width="34.7" height="25" rx="8" fill="#58a6ff" fill-opacity="0.08" stroke="#58a6ff" stroke-opacity=".6"/>
+<text x="215.75" y="102.64" class="m" font-size="11.5" font-weight="500" fill="#e6edf3" text-anchor="middle" >C++</text>
+<rect x="239.10000000000002" y="86" width="27.8" height="25" rx="8" fill="#58a6ff" fill-opacity="0.08" stroke="#58a6ff" stroke-opacity=".6"/>
+<text x="253.00000000000003" y="102.64" class="m" font-size="11.5" font-weight="500" fill="#e6edf3" text-anchor="middle" >Go</text>
+<rect x="272.90000000000003" y="86" width="41.6" height="25" rx="8" fill="#58a6ff" fill-opacity="0.08" stroke="#58a6ff" stroke-opacity=".6"/>
+<text x="293.70000000000005" y="102.64" class="m" font-size="11.5" font-weight="500" fill="#e6edf3" text-anchor="middle" >Rust</text>
+<rect x="320.5" y="86" width="83.0" height="25" rx="8" fill="#58a6ff" fill-opacity="0.08" stroke="#58a6ff" stroke-opacity=".6"/>
+<text x="362.0" y="102.64" class="m" font-size="11.5" font-weight="500" fill="#e6edf3" text-anchor="middle" >TypeScript</text>
+<rect x="409.5" y="86" width="34.7" height="25" rx="8" fill="#58a6ff" fill-opacity="0.08" stroke="#58a6ff" stroke-opacity=".6"/>
+<text x="426.85" y="102.64" class="m" font-size="11.5" font-weight="500" fill="#e6edf3" text-anchor="middle" >SQL</text>
+<circle cx="32" cy="134" r="3" fill="#39c5cf"/><text x="42" y="138" class="m" font-size="10.5" font-weight="600" fill="#39c5cf" text-anchor="start" letter-spacing=".8">BACKEND / SYSTEMS</text>
+<rect x="28" y="148" width="89.9" height="25" rx="8" fill="#39c5cf" fill-opacity="0.08" stroke="#39c5cf" stroke-opacity=".6"/>
+<text x="72.94999999999999" y="164.64" class="m" font-size="11.5" font-weight="500" fill="#e6edf3" text-anchor="middle" >Spring Boot</text>
+<rect x="123.89999999999999" y="148" width="62.3" height="25" rx="8" fill="#39c5cf" fill-opacity="0.08" stroke="#39c5cf" stroke-opacity=".6"/>
+<text x="155.04999999999998" y="164.64" class="m" font-size="11.5" font-weight="500" fill="#e6edf3" text-anchor="middle" >Node.js</text>
+<rect x="192.2" y="148" width="41.6" height="25" rx="8" fill="#39c5cf" fill-opacity="0.08" stroke="#39c5cf" stroke-opacity=".6"/>
+<text x="213.0" y="164.64" class="m" font-size="11.5" font-weight="500" fill="#e6edf3" text-anchor="middle" >REST</text>
+<rect x="239.79999999999998" y="148" width="48.5" height="25" rx="8" fill="#39c5cf" fill-opacity="0.08" stroke="#39c5cf" stroke-opacity=".6"/>
+<text x="264.04999999999995" y="164.64" class="m" font-size="11.5" font-weight="500" fill="#e6edf3" text-anchor="middle" >Redis</text>
+<rect x="294.29999999999995" y="148" width="83.0" height="25" rx="8" fill="#39c5cf" fill-opacity="0.08" stroke="#39c5cf" stroke-opacity=".6"/>
+<text x="335.79999999999995" y="164.64" class="m" font-size="11.5" font-weight="500" fill="#e6edf3" text-anchor="middle" >PostgreSQL</text>
+<rect x="383.29999999999995" y="148" width="55.4" height="25" rx="8" fill="#39c5cf" fill-opacity="0.08" stroke="#39c5cf" stroke-opacity=".6"/>
+<text x="410.99999999999994" y="164.64" class="m" font-size="11.5" font-weight="500" fill="#e6edf3" text-anchor="middle" >Docker</text>
+<circle cx="32" cy="196" r="3" fill="#a371f7"/><text x="42" y="200" class="m" font-size="10.5" font-weight="600" fill="#a371f7" text-anchor="start" letter-spacing=".8">AI</text>
+<rect x="28" y="210" width="34.7" height="25" rx="8" fill="#a371f7" fill-opacity="0.08" stroke="#a371f7" stroke-opacity=".6"/>
+<text x="45.35" y="226.64" class="m" font-size="11.5" font-weight="500" fill="#e6edf3" text-anchor="middle" >LLM</text>
+<rect x="68.7" y="210" width="34.7" height="25" rx="8" fill="#a371f7" fill-opacity="0.08" stroke="#a371f7" stroke-opacity=".6"/>
+<text x="86.05000000000001" y="226.64" class="m" font-size="11.5" font-weight="500" fill="#e6edf3" text-anchor="middle" >RAG</text>
+<rect x="109.4" y="210" width="76.1" height="25" rx="8" fill="#a371f7" fill-opacity="0.08" stroke="#a371f7" stroke-opacity=".6"/>
+<text x="147.45" y="226.64" class="m" font-size="11.5" font-weight="500" fill="#e6edf3" text-anchor="middle" >LangChain</text>
+<rect x="191.5" y="210" width="89.9" height="25" rx="8" fill="#a371f7" fill-opacity="0.08" stroke="#a371f7" stroke-opacity=".6"/>
+<text x="236.45" y="226.64" class="m" font-size="11.5" font-weight="500" fill="#e6edf3" text-anchor="middle" >AWS Bedrock</text>
+<rect x="287.4" y="210" width="34.7" height="25" rx="8" fill="#a371f7" fill-opacity="0.08" stroke="#a371f7" stroke-opacity=".6"/>
+<text x="304.75" y="226.64" class="m" font-size="11.5" font-weight="500" fill="#e6edf3" text-anchor="middle" >MCP</text>
+<rect x="328.09999999999997" y="210" width="103.7" height="25" rx="8" fill="#a371f7" fill-opacity="0.08" stroke="#a371f7" stroke-opacity=".6"/>
+<text x="379.95" y="226.64" class="m" font-size="11.5" font-weight="500" fill="#e6edf3" text-anchor="middle" >Agent Systems</text>
+<circle cx="32" cy="258" r="3" fill="#56d4bc"/><text x="42" y="262" class="m" font-size="10.5" font-weight="600" fill="#56d4bc" text-anchor="start" letter-spacing=".8">CLOUD</text>
+<rect x="28" y="272" width="34.7" height="25" rx="8" fill="#56d4bc" fill-opacity="0.08" stroke="#56d4bc" stroke-opacity=".6"/>
+<text x="45.35" y="288.64" class="m" font-size="11.5" font-weight="500" fill="#e6edf3" text-anchor="middle" >AWS</text>
+<rect x="68.7" y="272" width="76.1" height="25" rx="8" fill="#56d4bc" fill-opacity="0.08" stroke="#56d4bc" stroke-opacity=".6"/>
+<text x="106.75" y="288.64" class="m" font-size="11.5" font-weight="500" fill="#e6edf3" text-anchor="middle" >SageMaker</text>
+<rect x="150.8" y="272" width="34.7" height="25" rx="8" fill="#56d4bc" fill-opacity="0.08" stroke="#56d4bc" stroke-opacity=".6"/>
+<text x="168.15" y="288.64" class="m" font-size="11.5" font-weight="500" fill="#e6edf3" text-anchor="middle" >EMR</text>
+
+</svg>

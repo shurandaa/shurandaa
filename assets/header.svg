@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="330" viewBox="0 0 1000 330" fill="none">
+<defs>
+<filter id="glow" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="3"/></filter>
+<style>.s{font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif}.m{font-family:ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace}</style>
+<linearGradient id="role" x1="0" x2="1"><stop offset="0" stop-color="#00b7ff"/><stop offset="1" stop-color="#a371f7"/></linearGradient>
+<radialGradient id="halo" cx="85%" cy="15%" r="60%"><stop offset="0" stop-color="#1f6feb" stop-opacity=".28"/><stop offset="1" stop-color="#1f6feb" stop-opacity="0"/></radialGradient>
+<pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#8b949e" fill-opacity=".18"/></pattern>
+<clipPath id="c"><rect x="6" y="6" width="988" height="318" rx="10"/></clipPath>
+</defs>
+<rect x="6" y="6" width="988" height="318" rx="10" stroke="#00b7ff" stroke-opacity=".35" stroke-width="2" filter="url(#glow)"/>
+<rect x="6" y="6" width="988" height="318" rx="10" fill="#0a1424" stroke="#1f6feb" stroke-opacity=".75"/>
+<g clip-path="url(#c)"><rect width="1000" height="330" fill="url(#dots)"/><rect width="1000" height="330" fill="url(#halo)"/>
+<g stroke="#00b7ff" stroke-opacity=".16" stroke-width="1.5"><path d="M1000 70H870l-20 20H830"/><circle cx="830" cy="90" r="3" fill="#00b7ff" fill-opacity=".3"/><path d="M1000 110H920l-20 20H880"/><circle cx="880" cy="130" r="3" fill="#00b7ff" fill-opacity=".3"/><path d="M1000 150H840l-20 20H800"/><circle cx="800" cy="170" r="3" fill="#00b7ff" fill-opacity=".3"/><path d="M1000 190H900l-20 20H860"/><circle cx="860" cy="210" r="3" fill="#00b7ff" fill-opacity=".3"/></g></g>
+<text x="48" y="50" class="m" font-size="13" font-weight="400" fill="#8b949e" text-anchor="start" >~/shurandaa</text>
+<circle cx="722" cy="46" r="4" fill="#3fb950"/><text x="952" y="50" class="m" font-size="13" font-weight="400" fill="#8b949e" text-anchor="end" >open to 2027 SWE / MLE roles</text>
+<text x="48" y="112" class="s" font-size="42" font-weight="700" fill="#e6edf3" text-anchor="start" >Hi, I&#x27;m Shuran Zhao.</text>
+<text x="48" y="164" class="s" font-size="42" font-weight="700" fill="url(#role)" text-anchor="start" >An AI-Native Software Engineer</text>
+<text x="48" y="206" class="s" font-size="18" font-weight="400" fill="#8b949e" text-anchor="start" >Building AI infrastructure, distributed systems, and intelligent developer tools.</text>
+<text x="48" y="238" class="m" font-size="14" font-weight="400" fill="#00b7ff" text-anchor="start" >// turning LLMs into reliable, observable, production-grade systems</text>
+<rect x="48" y="268" width="238.0" height="26" rx="8" fill="#0d1b30" fill-opacity="1" stroke="#1f6feb" stroke-opacity=".6"/>
+<text x="167.0" y="285.32" class="m" font-size="12" font-weight="500" fill="#c9d1d9" text-anchor="middle" >MSCS @ Northeastern University</text>
+<rect x="294.0" y="268" width="72.4" height="26" rx="8" fill="#0d1b30" fill-opacity="1" stroke="#1f6feb" stroke-opacity=".6"/>
+<text x="330.2" y="285.32" class="m" font-size="12" font-weight="500" fill="#c9d1d9" text-anchor="middle" >Seattle</text>
+<rect x="374.4" y="268" width="115.6" height="26" rx="8" fill="#0d1b30" fill-opacity="1" stroke="#1f6feb" stroke-opacity=".6"/>
+<text x="432.2" y="285.32" class="m" font-size="12" font-weight="500" fill="#c9d1d9" text-anchor="middle" >New Grad 2027</text>
+<rect x="498.0" y="268" width="79.6" height="26" rx="8" fill="#0d1b30" fill-opacity="1" stroke="#1f6feb" stroke-opacity=".6"/>
+<text x="537.8" y="285.32" class="m" font-size="12" font-weight="500" fill="#c9d1d9" text-anchor="middle" >AI Infra</text>
+<rect x="585.6" y="268" width="158.8" height="26" rx="8" fill="#0d1b30" fill-opacity="1" stroke="#1f6feb" stroke-opacity=".6"/>
+<text x="665.0" y="285.32" class="m" font-size="12" font-weight="500" fill="#c9d1d9" text-anchor="middle" >Distributed Systems</text>
+<rect x="752.4" y="268" width="158.8" height="26" rx="8" fill="#0d1b30" fill-opacity="1" stroke="#1f6feb" stroke-opacity=".6"/>
+<text x="831.8" y="285.32" class="m" font-size="12" font-weight="500" fill="#c9d1d9" text-anchor="middle" >LLM / Agent Systems</text>
+
+</svg>
