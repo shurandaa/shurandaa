@@ -87,6 +87,7 @@ METRICS = [
 
 # impact: a measurable result, e.g. "p99 latency ↓ 38%"; if empty the card shows status instead.
 # status defaults to "In active development"; url empty → card is not linked (e.g. internal work).
+# link_label defaults to "view on GitHub  ↗" (e.g. use "read the case study  ↗" for a write-up).
 PROJECTS = [
     {
         "slug": "ai-oncall",
@@ -95,7 +96,8 @@ PROJECTS = [
         "tags": ["Python", "LangChain", "AWS Bedrock", "RAG", "MCP"],
         "impact": "",
         "status": "Intern Project · Finished",
-        "url": "",
+        "url": f"https://github.com/{USERNAME}/{USERNAME}/blob/main/projects/ai-oncall.md",
+        "link_label": "read the case study  ↗",
     },
     {
         "slug": "echomind",
@@ -526,7 +528,7 @@ def project(i, p):
         b += text(bx + 34, 91, status, 15, TEXT, "s", 600)
     b += f'<path d="M{bx + 18} 118h{bw - 36}" stroke="{BORDER}" stroke-opacity=".3"/>'
     if p["url"]:
-        b += text(bx + 18, 146, "view on GitHub  ↗", 13, CYAN, "m", 500)
+        b += text(bx + 18, 146, p.get("link_label", "view on GitHub  ↗"), 13, CYAN, "m", 500)
     else:
         b += text(bx + 18, 146, "internal · code not public", 13, MUTED, "m", 500)
     return svg(W, H, b, defs)
