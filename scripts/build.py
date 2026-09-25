@@ -44,6 +44,9 @@ LINKS = [
     ("Portfolio", "portfolio", ""),
 ]
 
+WHOAMI = "MSCS @ Northeastern University, Seattle · Amazon SDE Intern"
+STACK = "Java / Python / Rust / Go / TypeScript / AWS"
+
 FOCUS = [
     "Building AI-native developer infrastructure",
     "Working on LLM agents and distributed systems",
@@ -54,10 +57,15 @@ FOCUS = [
 
 SKILLS = [
     ("Languages", "#58a6ff", ["Java", "Python", "Kotlin", "C++", "Go", "Rust", "TypeScript", "SQL"]),
-    ("Backend / Systems", "#39c5cf", ["Spring Boot", "Node.js", "REST", "Redis", "PostgreSQL", "Docker"]),
+    ("Backend / Systems", "#39c5cf", ["Spring Boot", "Node.js", "Redis", "PostgreSQL", "Docker", "REST"]),
     ("AI", "#a371f7", ["LLM", "RAG", "LangChain", "AWS Bedrock", "MCP", "Agent Systems"]),
     ("Cloud", "#56d4bc", ["AWS", "SageMaker", "EMR"]),
 ]
+
+# Skills with a logo on skillicons.dev render as icons; the rest render as text chips.
+SKILL_ICONS = {"Java": "java", "Python": "py", "Kotlin": "kotlin", "C++": "cpp", "Go": "go", "Rust": "rust",
+               "TypeScript": "ts", "Spring Boot": "spring", "Node.js": "nodejs", "Redis": "redis",
+               "PostgreSQL": "postgres", "Docker": "docker", "AWS": "aws"}
 
 METRICS = [
     ("500+", "DSA problems solved", "#58a6ff"),
@@ -232,59 +240,98 @@ def cta(label, icon):
 
 
 def current_focus():
-    W, H = 680, 320
+    W, H = 680, 380
     b = card(M, M, W - 2 * M, H - 2 * M)
     b += terminal_bar(W, f"{USERNAME}@seattle: ~ — zsh")
-    y, x, lh, fs = 84, 30, 30, 14.5
-    b += (f'<text x="{x}" y="{y}" class="m" font-size="{fs}"><tspan fill="{GREEN}">$</tspan>'
-          f'<tspan fill="{TEXT}" font-weight="600"> current_focus</tspan></text>\n')
+    x, lh, fs = 30, 25, 13.5
+
+    def cmd(y, name):
+        return (f'<text x="{x}" y="{y}" class="m" font-size="{fs}"><tspan fill="{GREEN}">$</tspan>'
+                f'<tspan fill="{TEXT}" font-weight="600"> {name}</tspan></text>\n')
+
+    y = 78
+    b += cmd(y, "whoami")
+    b += text(x, y + lh, WHOAMI, fs, "#c9d1d9", "m")
+    y += 2 * lh + 10
+    b += cmd(y, "current_focus")
     for line in FOCUS:
         y += lh
         b += (f'<text x="{x}" y="{y}" class="m" font-size="{fs}"><tspan fill="{CYAN}">&gt;</tspan>'
-              f'<tspan fill="{TEXT}"> {esc(line)}</tspan></text>\n')
-    y += lh + 6
+              f'<tspan fill="#c9d1d9"> {esc(line)}</tspan></text>\n')
+    y += lh + 10
+    b += cmd(y, "stack")
+    b += text(x, y + lh, STACK, fs, "#c9d1d9", "m")
+    y += 2 * lh + 5
     b += text(x, y, "$", fs, GREEN, "m")
-    b += (f'<rect x="{x + 16}" y="{y - 13}" width="9" height="17" fill="{TEXT}">'
+    b += (f'<rect x="{x + 16}" y="{y - 12}" width="8.5" height="16" fill="{TEXT}">'
           f'<animate attributeName="opacity" values="1;1;0;0" keyTimes="0;.5;.5;1" dur="1.2s" '
           f'repeatCount="indefinite"/></rect>\n')
     return svg(W, H, b)
 
 
+# Pixel-art cat coding behind a laptop. One character = one pixel.
+CAT = [
+    "....OO............OO....",
+    "....OWO..........OWO....",
+    "....OWPO........OPWO....",
+    "....OWWWOOOOOOOOWWWO....",
+    "...OWWWWWWWWWWWWWWWWO...",
+    "...OWWWWWWWWWWWWWWWWO...",
+    "...OWWEEWWWWWWWWEEWWO...",
+    "...OWWEEWWWWWWWWEEWWO...",
+    "...OWWWWWWWPPWWWWWWWO...",
+    "...OWSWWWWSWWSWWWWSWO...",
+    "....OWWWWWWWWWWWWWWO....",
+    "..GGWWGGGGGGGGGGGGWWGG..",
+    "..GLLLLLLLLLLLLLLLLLLG..",
+    "..GLLLLLLLLCCLLLLLLLLG..",
+    "..GLLLLLLLCCCCLLLLLLLG..",
+    "..GLLLLLLLCCCCLLLLLLLG..",
+    "..GLLLLLLLLCCLLLLLLLLG..",
+    "..GLLLLLLLLLLLLLLLLLLG..",
+    ".GGGGGGGGGGGGGGGGGGGGGG.",
+]
+CAT_COLORS = {"O": "#3b4a66", "W": "#e6edf3", "S": "#f2a7c3", "P": "#f778ba", "E": CYAN,
+              "G": "#484f58", "L": "#21262d", "C": CYAN}
+
+
 def mascot():
-    W, H = 340, 320
+    W, H = 340, 380
+    u = 7
+    aw, ah = len(CAT[0]) * u, len(CAT) * u
+    ax, ay = (W - aw) / 2, 92
+    defs = (f'<radialGradient id="screen" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="{CYAN}" '
+            f'stop-opacity=".22"/><stop offset="1" stop-color="{CYAN}" stop-opacity="0"/></radialGradient>')
     b = card(M, M, W - 2 * M, H - 2 * M)
-    b += text(26, 38, "SYSTEM MAP", 11, MUTED, "m", 600, extra='letter-spacing="1.5"')
-    b += f'<circle cx="{W - 66}" cy="34" r="3.5" fill="{GREEN}"><animate attributeName="opacity" values="1;.35;1" dur="2.4s" repeatCount="indefinite"/></circle>'
-    b += text(W - 26, 38, "LIVE", 11, GREEN, "m", 600, "end", 'letter-spacing="1.5"')
+    b += text(26, 38, "PAIR PROGRAMMER", 11, MUTED, "m", 600, extra='letter-spacing="1.5"')
+    b += (f'<circle cx="{W - 90}" cy="34" r="3.5" fill="{GREEN}"><animate attributeName="opacity" '
+          f'values="1;.35;1" dur="2.4s" repeatCount="indefinite"/></circle>')
+    b += text(W - 26, 38, "ONLINE", 11, GREEN, "m", 600, "end", 'letter-spacing="1.5"')
+    b += f'<ellipse cx="{W / 2}" cy="{ay + ah * .55}" rx="{aw * .75}" ry="{ah * .6}" fill="url(#screen)"/>\n'
 
-    cx, cy = W / 2, 148
-    nodes = [("RAG", 64, 88), ("MCP", W - 64, 88), ("GPU", 64, 208), ("MEM", W - 64, 208)]
-    for i, (label, nx, ny) in enumerate(nodes):
-        path = f"M{cx} {cy} L{nx} {ny}"
-        b += f'<path d="{path}" stroke="{BORDER}" stroke-opacity=".55" stroke-dasharray="3 4"/>\n'
-        b += (f'<circle r="2.6" fill="{CYAN}"><animateMotion dur="3s" begin="-{i * .75}s" '
-              f'repeatCount="indefinite" path="{path}"/></circle>\n')
-    for label, nx, ny in nodes:
-        b += (f'<rect x="{nx - 30}" y="{ny - 14}" width="60" height="28" rx="7" fill="{TILE_BG}" '
-              f'stroke="{BORDER}" stroke-opacity=".7"/>\n')
-        b += text(nx, ny + 4.5, label, 12, TEXT, "m", 600, "middle")
-    # central chip with pins
-    s = 76
-    pins = ""
-    for k in range(4):
-        o = -21 + k * 14
-        pins += (f'<path d="M{cx + o} {cy - s / 2 - 8}v8M{cx + o} {cy + s / 2}v8'
-                 f'M{cx - s / 2 - 8} {cy + o}h8M{cx + s / 2} {cy + o}h8"/>')
-    b += f'<g stroke="{CYAN}" stroke-opacity=".7" stroke-width="2" stroke-linecap="round">{pins}</g>\n'
-    b += (f'<rect x="{cx - s / 2}" y="{cy - s / 2}" width="{s}" height="{s}" rx="12" fill="{TILE_BG}" '
-          f'stroke="{CYAN}" stroke-width="1.6"/>\n'
-          f'<rect x="{cx - s / 2 + 8}" y="{cy - s / 2 + 8}" width="{s - 16}" height="{s - 16}" rx="7" '
-          f'stroke="{VIOLET}" stroke-opacity=".5"/>\n')
-    b += text(cx, cy + 6, "LLM", 17, TEXT, "m", 700, "middle")
+    # floating code glyphs
+    for gx, gy, glyph, color, dur in [(58, 104, "</>", CYAN, 4), (W - 62, 128, "{ }", VIOLET, 5),
+                                      (70, 196, "λ", VIOLET, 4.5), (W - 70, 206, "0x1", CYAN, 5.5)]:
+        b += (f'<g opacity=".7">{text(gx, gy, glyph, 14, color, "m", 700, "middle").strip()}'
+              f'<animateTransform attributeName="transform" type="translate" values="0 0;0 -6;0 0" '
+              f'dur="{dur}s" repeatCount="indefinite"/></g>\n')
 
-    b += text(cx, 272, NAME, 16, TEXT, "s", 700, "middle")
-    b += text(cx, 294, "agents · infra · inference", 12, MUTED, "m", 400, "middle")
-    return svg(W, H, b)
+    b += f'<g shape-rendering="crispEdges">'
+    for r, row in enumerate(CAT):
+        for c, ch in enumerate(row):
+            if ch in CAT_COLORS:
+                b += (f'<rect x="{ax + c * u:.0f}" y="{ay + r * u:.0f}" width="{u}" height="{u}" '
+                      f'fill="{CAT_COLORS[ch]}"/>')
+    # blink: briefly paint fur over the top half of each eye
+    b += '<g opacity="0">'
+    for c in (6, 16):
+        b += f'<rect x="{ax + c * u:.0f}" y="{ay + 6 * u:.0f}" width="{2 * u}" height="{u}" fill="#e6edf3"/>'
+    b += ('<animate attributeName="opacity" values="0;0;1;0" keyTimes="0;.94;.97;1" dur="4s" '
+          'repeatCount="indefinite"/></g></g>\n')
+
+    b += text(W / 2, 318, NAME, 16, TEXT, "s", 700, "middle")
+    b += text(W / 2, 342, "agents · infra · inference", 12, MUTED, "m", 400, "middle")
+    return svg(W, H, b, defs)
 
 
 def fetch_json(url):
@@ -353,16 +400,43 @@ def github_stats(stats):
     return svg(W, H, b)
 
 
+ICON_CACHE = ASSETS / "icons"
+
+
+def skill_icon(slug, x, y, size, n):
+    """Inline a skillicons.dev logo (cached locally), with its ids namespaced to avoid clashes."""
+    path = ICON_CACHE / f"{slug}.svg"
+    if not path.exists():
+        ICON_CACHE.mkdir(parents=True, exist_ok=True)
+        req = urllib.request.Request(f"https://skillicons.dev/icons?i={slug}",
+                                     headers={"User-Agent": f"{USERNAME}-profile"})
+        with urllib.request.urlopen(req, timeout=30) as r:
+            path.write_text(r.read().decode())
+    src = path.read_text().strip()
+    src = re.sub(r'id="([^"]+)"', rf'id="i{n}-\1"', src)
+    src = re.sub(r'(url\(#|href="#)([^")]+)', rf'\1i{n}-\2', src)
+    return re.sub(r'<svg width="\d+" height="\d+"', f'<svg x="{x}" y="{y}" width="{size}" height="{size}"',
+                  src, count=1) + "\n"
+
+
 def skills():
     W, H = 500, 330
     b = card(M, M, W - 2 * M, H - 2 * M)
     b += text(28, 44, "Tech Stack & Skills", 17, TEXT, "s", 700)
-    y = 76
+    y, size, n = 76, 32, 0
     for group, color, items in SKILLS:
         b += f'<circle cx="32" cy="{y - 4}" r="3" fill="{color}"/>'
         b += text(42, y, group.upper(), 10.5, color, "m", 600, extra='letter-spacing=".8"')
-        b += pill_row(28, y + 10, items, gap=6, size=11.5, color=color, fill=color, fill_op=.08,
-                      h=25, fg=TEXT, pad=14)
+        x = 28
+        for item in items:
+            if item in SKILL_ICONS:
+                b += skill_icon(SKILL_ICONS[item], x, y + 10, size, n)
+                x, n = x + size + 7, n + 1
+            else:
+                s_, w = pill(x, y + 10 + (size - 25) / 2, item, size=11.5, color=color, fill=color,
+                             fill_op=.08, h=25, fg=TEXT, pad=14)
+                b += s_
+                x += w + 6
         y += 62
     return svg(W, H, b)
 
@@ -437,7 +511,7 @@ def experience():
 # ─────────────────────────────── README ────────────────────────────────
 
 def readme(ctas):
-    focus_alt = "$ current_focus — " + "; ".join(FOCUS)
+    focus_alt = f"$ whoami — {WHOAMI}. $ current_focus — " + "; ".join(FOCUS) + f". $ stack — {STACK}"
     skills_alt = " | ".join(f"{g}: {', '.join(items)}" for g, _, items in SKILLS)
     metrics_alt = " · ".join(f"{v} {l}" for v, l, _ in METRICS)
     exp_alt = " | ".join(f"{o} — {r}: {d}" for o, r, d in EXPERIENCE)
@@ -459,7 +533,7 @@ def readme(ctas):
 {buttons}
 </p>
 
-<img src="assets/current-focus.svg" width="66.6%" alt="{esc(focus_alt)}" /><img src="assets/mascot.svg" width="33.3%" alt="System map: LLM connected to RAG, MCP, GPU and memory" />
+<img src="assets/current-focus.svg" width="66.6%" alt="{esc(focus_alt)}" /><img src="assets/mascot.svg" width="33.3%" alt="Pixel-art cat coding on a laptop" />
 
 <img src="assets/github-stats.svg" width="49.9%" alt="GitHub stats for @{USERNAME}" /><img src="assets/skills.svg" width="49.9%" alt="{esc(skills_alt)}" />
 

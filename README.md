@@ -8,9 +8,9 @@
   <a href="mailto:zhao.shur@northeastern.edu"><img src="assets/cta-email.svg" height="34" alt="Email" /></a>
 </p>
 
-<img src="assets/current-focus.svg" width="66.6%" alt="$ current_focus — Building AI-native developer infrastructure; Working on LLM agents and distributed systems; Researching applied AI / multimodal systems; Learning Rust, systems design, and high-performance inference; Preparing for 2027 New Grad SWE / MLE roles" /><img src="assets/mascot.svg" width="33.3%" alt="System map: LLM connected to RAG, MCP, GPU and memory" />
+<img src="assets/current-focus.svg" width="66.6%" alt="$ whoami — MSCS @ Northeastern University, Seattle · Amazon SDE Intern. $ current_focus — Building AI-native developer infrastructure; Working on LLM agents and distributed systems; Researching applied AI / multimodal systems; Learning Rust, systems design, and high-performance inference; Preparing for 2027 New Grad SWE / MLE roles. $ stack — Java / Python / Rust / Go / TypeScript / AWS" /><img src="assets/mascot.svg" width="33.3%" alt="Pixel-art cat coding on a laptop" />
 
-<img src="assets/github-stats.svg" width="49.9%" alt="GitHub stats for @shurandaa" /><img src="assets/skills.svg" width="49.9%" alt="Languages: Java, Python, Kotlin, C++, Go, Rust, TypeScript, SQL | Backend / Systems: Spring Boot, Node.js, REST, Redis, PostgreSQL, Docker | AI: LLM, RAG, LangChain, AWS Bedrock, MCP, Agent Systems | Cloud: AWS, SageMaker, EMR" />
+<img src="assets/github-stats.svg" width="49.9%" alt="GitHub stats for @shurandaa" /><img src="assets/skills.svg" width="49.9%" alt="Languages: Java, Python, Kotlin, C++, Go, Rust, TypeScript, SQL | Backend / Systems: Spring Boot, Node.js, Redis, PostgreSQL, Docker, REST | AI: LLM, RAG, LangChain, AWS Bedrock, MCP, Agent Systems | Cloud: AWS, SageMaker, EMR" />
 
 <img src="assets/metrics.svg" width="100%" alt="500+ DSA problems solved · 2+ yrs engineering experience · AI Infra &amp; distributed systems · 2027 new grad · SWE / MLE" />
 
