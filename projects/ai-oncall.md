@@ -24,7 +24,7 @@ An AI-for-Ops system that automatically investigates **deployment failures, inte
 | 🪙 Tokens per investigation (custom MCP server) | **↓ 60%** |
 | 🧑‍💻 New-engineer on-call ramp-up time | **↓ 80%** |
 | 📊 Automated weekly reporting | **30+ engineers** |
-| 🔁 Self-evolving | Weekly evaluation · memory & skill updates · automatic rollback on regression |
+| 🔁 Self-evolving | Weekly evaluation · memory & skill updates · engineer-run rollback on regression |
 
 ---
 
