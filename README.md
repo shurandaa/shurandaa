@@ -2,28 +2,28 @@
 
 <div align="center">
 
-<img src="assets/header.svg" width="100%" alt="Hi, I&#x27;m Shuran Zhao. An AI-Native Software Engineer. Building AI infrastructure, distributed systems, and intelligent developer tools." />
+<img src="assets/header.svg?v=32955db9" width="100%" alt="Hi, I&#x27;m Shuran Zhao. An AI-Native Software Engineer. Building AI infrastructure, distributed systems, and intelligent developer tools." />
 
 <p>
-  <a href="mailto:shuranz330@gmail.com"><img src="assets/cta-email.svg" height="34" alt="Email" /></a>
+  <a href="mailto:shuranz330@gmail.com"><img src="assets/cta-email.svg?v=76f312d2" height="34" alt="Email" /></a>
 </p>
 
-<img src="assets/current-focus.svg" width="66.6%" alt="$ whoami — MSCS @ Northeastern University, Seattle · Amazon SDE Intern. $ current_focus — Building AI-native developer infrastructure; Working on LLM agents and distributed systems; Researching applied AI / multimodal systems; Learning Rust, systems design, and high-performance inference; Preparing for 2027 New Grad SWE / MLE roles. $ stack — Java / Python / Rust / Go / TypeScript / AWS" /><img src="assets/mascot.svg" width="33.3%" alt="Pixel-art cat coding on a laptop" />
+<img src="assets/current-focus.svg?v=eaa79b88" width="66.6%" alt="$ whoami — MSCS @ Northeastern University, Seattle · Amazon SDE Intern. $ current_focus — Building AI-native developer infrastructure; Working on LLM agents and distributed systems; Researching applied AI / multimodal systems; Learning Rust, systems design, and high-performance inference; Preparing for 2027 New Grad SWE / MLE roles. $ stack — Java / Python / Rust / Go / TypeScript / AWS" /><img src="assets/mascot.svg?v=d75cd0d3" width="33.3%" alt="Pixel-art cat coding on a laptop" />
 
-<a href="mailto:shuranz330@gmail.com"><img src="assets/contact.svg" width="49.9%" alt="Contact — Email: shuranz330@gmail.com · Phone: +1 (206) 843-0550 · Location: Seattle, WA · Status: Open to 2027 New Grad SWE / MLE roles" /></a><img src="assets/skills.svg" width="49.9%" alt="Languages: Java, Python, Kotlin, C++, Go, Rust, TypeScript, SQL | Backend / Systems: Spring Boot, Node.js, Redis, PostgreSQL, Docker, REST | AI: LLM, RAG, LangChain, AWS Bedrock, MCP, Agent Systems | Cloud: AWS, SageMaker, EMR" />
+<a href="mailto:shuranz330@gmail.com"><img src="assets/contact.svg?v=0f05a95c" width="49.9%" alt="Contact — Email: shuranz330@gmail.com · Phone: +1 (206) 843-0550 · Location: Seattle, WA · Status: Open to 2027 New Grad SWE / MLE roles" /></a><img src="assets/skills.svg?v=251bc8f2" width="49.9%" alt="Languages: Java, Python, Kotlin, C++, Go, Rust, TypeScript, SQL | Backend / Systems: Spring Boot, Node.js, Redis, PostgreSQL, Docker, REST | AI: LLM, RAG, LangChain, AWS Bedrock, MCP, Agent Systems | Cloud: AWS, SageMaker, EMR" />
 
-<img src="assets/metrics.svg" width="100%" alt="500+ DSA problems solved · 2+ yrs engineering experience · AI Infra &amp; distributed systems · 2027 new grad · SWE / MLE" />
+<img src="assets/metrics.svg?v=20814f7c" width="100%" alt="500+ DSA problems solved · 2+ yrs engineering experience · AI Infra &amp; distributed systems · 2027 new grad · SWE / MLE" />
 
-<img src="assets/section-projects.svg" width="100%" alt="Featured Projects" />
+<img src="assets/section-projects.svg?v=8cd63e82" width="100%" alt="Featured Projects" />
 
-<img src="assets/project-ai-oncall.svg" width="100%" alt="AI On-Call · Incident Investigation Platform — LLM agents that triage alerts, correlate logs &amp; metrics, and draft root-cause reports. (Python, LangChain, AWS Bedrock, RAG, MCP)" />
+<img src="assets/project-ai-oncall.svg?v=13dff4e6" width="100%" alt="AI On-Call · Incident Investigation Platform — LLM agents that triage alerts, correlate logs &amp; metrics, and draft root-cause reports. (Python, LangChain, AWS Bedrock, RAG, MCP)" />
 
-<a href="https://github.com/shurandaa?tab=repositories"><img src="assets/project-echomind.svg" width="100%" alt="EchoMind · Multi-Agent Runtime — A runtime for orchestrating tool-using agents with shared memory, planning, and tracing. (Python, Multi-Agent, MCP, Redis, Docker)" /></a>
+<a href="https://github.com/shurandaa?tab=repositories"><img src="assets/project-echomind.svg?v=6040090a" width="100%" alt="EchoMind · Multi-Agent Runtime — A runtime for orchestrating tool-using agents with shared memory, planning, and tracing. (Python, Multi-Agent, MCP, Redis, Docker)" /></a>
 
-<a href="https://github.com/shurandaa?tab=repositories"><img src="assets/project-inference-gateway.svg" width="100%" alt="High-Performance AI Inference Gateway — An OpenAI-compatible gateway with request batching, caching, routing, and rate limiting. (Rust, Go, Redis, Docker, gRPC)" /></a>
+<a href="https://github.com/shurandaa?tab=repositories"><img src="assets/project-inference-gateway.svg?v=6628ddbe" width="100%" alt="High-Performance AI Inference Gateway — An OpenAI-compatible gateway with request batching, caching, routing, and rate limiting. (Rust, Go, Redis, Docker, gRPC)" /></a>
 
-<img src="assets/section-experience.svg" width="100%" alt="Experience" />
+<img src="assets/section-experience.svg?v=27dc150e" width="100%" alt="Experience" />
 
-<img src="assets/experience.svg" width="100%" alt="Amazon — SDE Intern: AI infrastructure &amp; distributed systems · automated incident investigation · significantly reduced triage effort | Northeastern University — Research: Applied AI &amp; multimodal systems" />
+<img src="assets/experience.svg?v=4d86e82b" width="100%" alt="Amazon — SDE Intern: AI infrastructure &amp; distributed systems · automated incident investigation · significantly reduced triage effort | Northeastern University — Research: Applied AI &amp; multimodal systems" />
 
 </div>
