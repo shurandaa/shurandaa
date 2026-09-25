@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="40" viewBox="0 0 900 40">
+  <defs>
+    <g id="paw" fill="#8B6F47">
+      <ellipse cx="0" cy="4" rx="7" ry="6"/>
+      <circle cx="-8" cy="-5" r="3"/>
+      <circle cx="-3" cy="-9" r="3"/>
+      <circle cx="3" cy="-9" r="3"/>
+      <circle cx="8" cy="-5" r="3"/>
+    </g>
+  </defs>
+  <path d="M20 20 q25 -12 50 0 t50 0 t50 0 t50 0 t50 0 t50 0 M530 20 q25 -12 50 0 t50 0 t50 0 t50 0 t50 0 t50 0" fill="none" stroke="#C3B091" stroke-width="4" stroke-linecap="round" stroke-dasharray="2 10"/>
+  <use href="#paw" x="410" y="22" transform="rotate(-15 410 22)"/>
+  <use href="#paw" x="450" y="18"/>
+  <use href="#paw" x="490" y="22" transform="rotate(15 490 22)"/>
+</svg>
