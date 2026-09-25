@@ -16,7 +16,7 @@
 
 <img src="assets/section-projects.svg" width="100%" alt="Featured Projects" />
 
-<img src="assets/project-ai-oncall.svg" width="100%" alt="AI On-Call · Incident Investigation Platform — LLM agents that triage alerts, correlate logs &amp; metrics, and draft root-cause reports. (Python, LangChain, AWS Bedrock, RAG, MCP)" />
+<a href="https://github.com/shurandaa/shurandaa/blob/main/projects/ai-oncall.md"><img src="assets/project-ai-oncall.svg" width="100%" alt="AI On-Call · Incident Investigation Platform — LLM agents that triage alerts, correlate logs &amp; metrics, and draft root-cause reports. (Python, LangChain, AWS Bedrock, RAG, MCP)" /></a>
 
 <a href="https://github.com/shurandaa?tab=repositories"><img src="assets/project-echomind.svg" width="100%" alt="EchoMind · Multi-Agent Runtime — A runtime for orchestrating tool-using agents with shared memory, planning, and tracing. (Python, Multi-Agent, MCP, Redis, Docker)" /></a>
 
