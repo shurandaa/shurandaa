@@ -14,21 +14,21 @@
 
 ## 🧸 About Me
 
-- 🎓 Student at **Northeastern University**
-- 🔭 Currently working on **\<你的项目\>**
-- 🌱 Learning **\<正在学的东西\>**
-- 💬 Ask me about **\<擅长的话题\>**
-- 🍪 Fun fact: **\<一个有趣的小事实\>**
+- 🎓 MS in Computer Science at **Northeastern University, Seattle**
+- 🔭 Currently building **AI agents and infrastructure for reliable LLM applications**
+- 🌱 Learning **Rust, distributed systems design, and high-performance AI inference**
+- 💬 Ask me about **Java, AWS, RAG, and multi-agent systems**
+- 🍪 Fun fact: **When I'm not debugging code, I'm exploring national parks or flying in Microsoft Flight Simulator**
 
 <img src="./assets/divider.svg" width="100%" />
 
 ## 🧺 Tech Stack
 
 <p>
+  <img src="https://img.shields.io/badge/Java-C3B091?style=for-the-badge&logo=openjdk&logoColor=5C4630" />
   <img src="https://img.shields.io/badge/Python-C3B091?style=for-the-badge&logo=python&logoColor=5C4630" />
-  <img src="https://img.shields.io/badge/JavaScript-C3B091?style=for-the-badge&logo=javascript&logoColor=5C4630" />
-  <img src="https://img.shields.io/badge/HTML5-C3B091?style=for-the-badge&logo=html5&logoColor=5C4630" />
-  <img src="https://img.shields.io/badge/CSS3-C3B091?style=for-the-badge&logo=css3&logoColor=5C4630" />
+  <img src="https://img.shields.io/badge/Rust-C3B091?style=for-the-badge&logo=rust&logoColor=5C4630" />
+  <img src="https://img.shields.io/badge/AWS-C3B091?style=for-the-badge&logo=amazonwebservices&logoColor=5C4630" />
   <img src="https://img.shields.io/badge/Git-C3B091?style=for-the-badge&logo=git&logoColor=5C4630" />
   <img src="https://img.shields.io/badge/VS_Code-C3B091?style=for-the-badge&logo=visualstudiocode&logoColor=5C4630" />
 </p>
