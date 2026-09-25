@@ -9,7 +9,6 @@ Only the standard library is used, so this runs anywhere (incl. GitHub Actions).
 """
 
 import datetime as dt
-import hashlib
 import html
 import json
 import os
@@ -639,12 +638,7 @@ def main():
             ("Total Issues", "#58a6ff"), ("Contributions", GREEN), ("Current Streak", "#f0883e")]])
     for name, content in files.items():
         (ASSETS / name).write_text(content)
-    # Browsers cache GitHub-served images for minutes; a content hash in the URL makes edits show up at once.
-    def bust(m):
-        digest = hashlib.sha1((ROOT / m.group(1)).read_bytes()).hexdigest()[:8]
-        return f'src="{m.group(1)}?v={digest}"'
-
-    (ROOT / "README.md").write_text(re.sub(r'src="(assets/[^"?]+)"', bust, readme(ctas)))
+    (ROOT / "README.md").write_text(readme(ctas))
     print(f"wrote {len(files)} assets + README.md")
 
 
