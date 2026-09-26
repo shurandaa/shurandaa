@@ -80,9 +80,9 @@ SKILL_ICONS = {"Java": "java", "Python": "py", "Kotlin": "kotlin", "C++": "cpp",
                "PostgreSQL": "postgres", "Docker": "docker", "AWS": "aws"}
 
 METRICS = [
-    ("500+", "DSA problems solved", "#58a6ff"),
-    ("2+ yrs", "engineering experience", "#39c5cf"),
-    ("AI Infra", "& distributed systems", "#a371f7"),
+    ("↓80%", "on-call triage time @ AWS", "#58a6ff"),
+    ("3.8", "GPA · MSCS @ Northeastern", "#39c5cf"),
+    ("~8K LOC", "agent runtime, from scratch", "#a371f7"),
     ("2027", "new grad · SWE / MLE", "#56d4bc"),
 ]
 
