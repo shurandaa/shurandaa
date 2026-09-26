@@ -90,7 +90,7 @@ METRICS = [
 # status defaults to "In active development"; url empty → card is not linked (e.g. internal work).
 # link_label defaults to "view on GitHub  ↗" (e.g. use "read the case study  ↗" for a write-up).
 # Optional: impact_label (default "IMPACT"), impact_note (small line under the impact), with (collaborator credit),
-# links (list of (label, url) shown as small text links under the card).
+# doc (design-doc URL: the card then shares its row with a clickable "Design Doc" box).
 PROJECTS = [
     {
         "slug": "ai-oncall",
@@ -123,8 +123,7 @@ PROJECTS = [
         "status": "Live demo",
         "url": "https://54.209.58.120.sslip.io",
         "link_label": "try the live demo  ↗",
-        "links": [("▶ Live demo", "https://54.209.58.120.sslip.io"),
-                  ("📄 Design doc", f"https://github.com/{USERNAME}/{USERNAME}/blob/main/projects/switchboard.md")],
+        "doc": f"https://github.com/{USERNAME}/{USERNAME}/blob/main/projects/switchboard.md",
     },
     {
         "slug": "keel",
@@ -135,8 +134,7 @@ PROJECTS = [
         "status": "Live demo",
         "url": "https://keel.54.209.58.120.sslip.io",
         "link_label": "try the live demo  ↗",
-        "links": [("▶ Live demo", "https://keel.54.209.58.120.sslip.io"),
-                  ("📄 Design doc", f"https://github.com/{USERNAME}/{USERNAME}/blob/main/projects/keel.md")],
+        "doc": f"https://github.com/{USERNAME}/{USERNAME}/blob/main/projects/keel.md",
     },
 ]
 
@@ -572,8 +570,15 @@ def section(title):
     return svg(W, H, b)
 
 
+PROJECT_H = 196
+DOC_W = 245                 # width of the side "Design Doc" box
+MAIN_W = 1000 - DOC_W       # project card width when it shares a row with a doc box
+
+
 def project(i, p):
-    W, H = 1000, 196
+    if p.get("doc"):
+        return project_with_doc(i, p)
+    W, H = 1000, PROJECT_H
     defs = (f'<linearGradient id="bar" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="{CYAN}"/>'
             f'<stop offset="1" stop-color="{VIOLET}"/></linearGradient>')
     b = card(M, M, W - 2 * M, H - 2 * M)
@@ -605,6 +610,49 @@ def project(i, p):
     else:
         b += text(bx + 18, 146, "internal · code not public", 13, MUTED, "m", 500)
     return svg(W, H, b, defs)
+
+
+def _project_header(i, p, W, H):
+    defs = (f'<linearGradient id="bar" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="{CYAN}"/>'
+            f'<stop offset="1" stop-color="{VIOLET}"/></linearGradient>')
+    b = card(M, M, W - 2 * M, H - 2 * M)
+    b += f'<rect x="{M}" y="{M + 22}" width="3" height="{H - 2 * M - 44}" rx="1.5" fill="url(#bar)"/>'
+    x = 36
+    label = f"{i:02d} / FEATURED PROJECT" + (f" · with {p['with']}" if p.get("with") else "")
+    b += text(x, 44, label, 11, MUTED, "m", 500, extra='letter-spacing="1.2"')
+    b += text(x, 80, p["name"], 23, TEXT, "s", 700)
+    b += text(x, 110, p["desc"], 15, MUTED)
+    b += pill_row(x, 134, p["tags"], gap=7, size=12, h=26)
+    return b, defs
+
+
+def project_with_doc(i, p):
+    """Main card (links to the demo) — status sits inline at the top right."""
+    W, H = MAIN_W, PROJECT_H
+    b, defs = _project_header(i, p, W, H)
+    link = p.get("link_label", "view on GitHub  ↗").replace("  ", " ")
+    b += text(W - 30, 44, link, 12.5, CYAN, "m", 500, "end")
+    status = p.get("status", "In active development")
+    sx = W - 30 - mono_w(link, 12.5) - 18
+    b += text(sx, 44, status, 13, TEXT, "s", 600, "end")
+    b += f'<circle cx="{sx - len(status) * 7.2 - 10:.0f}" cy="40" r="4" fill="{GREEN}"/>'
+    return svg(W, H, b, defs)
+
+
+def doc_box(p):
+    """Companion box that links to the project's design doc."""
+    W, H = DOC_W, PROJECT_H
+    b = card(M, M, W - 2 * M, H - 2 * M)
+    b += text(26, 44, "DESIGN DOC", 11, MUTED, "m", 600, extra='letter-spacing="1.4"')
+    # document glyph
+    x0, y0 = 26, 62
+    b += (f'<path d="M{x0} {y0}h26l12 12v34h-38z" fill="{TILE_BG}" stroke="{CYAN}" stroke-width="1.6" stroke-linejoin="round"/>'
+          f'<path d="M{x0 + 26} {y0}v12h12" fill="none" stroke="{CYAN}" stroke-width="1.6" stroke-linejoin="round"/>'
+          f'<path d="M{x0 + 8} {y0 + 22}h22M{x0 + 8} {y0 + 30}h22M{x0 + 8} {y0 + 38}h14" stroke="{VIOLET}" stroke-width="1.6" stroke-linecap="round"/>')
+    b += text(26, 136, "Architecture, diagrams", 13.5, TEXT, "s", 600)
+    b += text(26, 155, "& design trade-offs", 13.5, TEXT, "s", 600)
+    b += text(26, 181, "read the doc ↗", 12.5, CYAN, "m", 500)
+    return svg(W, H, b)
 
 
 def timeline(rows):
@@ -648,13 +696,17 @@ def readme(ctas):
         f'  <a href="{esc(url)}"><img src="assets/cta-{icon}.svg" height="34" alt="{esc(label)}" /></a>'
         for label, icon, url in ctas)
     def project_img(p):
-        img = (f'<img src="assets/project-{p["slug"]}.svg" width="100%" '
-               f'alt="{esc(p["name"])} — {esc(p["desc"])} ({esc(", ".join(p["tags"]))})" />')
-        out = f'<a href="{esc(p["url"])}">{img}</a>' if p["url"] else img
-        if p.get("links"):  # small text links under the card, e.g. demo + design doc
-            out += "<br><sub>" + " &nbsp;·&nbsp; ".join(
-                f'<a href="{esc(u)}">{esc(t)}</a>' for t, u in p["links"]) + "</sub>"
-        return out
+        alt = f'{esc(p["name"])} — {esc(p["desc"])} ({esc(", ".join(p["tags"]))})'
+        if p.get("doc"):
+            # Two boxes in one row, no whitespace between them so they never wrap; equal heights.
+            main_w = 75.4
+            doc_w = round(main_w * DOC_W / MAIN_W, 2)
+            main = f'<a href="{esc(p["url"])}"><img src="assets/project-{p["slug"]}.svg" width="{main_w}%" alt="{alt}" /></a>'
+            doc = (f'<a href="{esc(p["doc"])}"><img src="assets/doc-{p["slug"]}.svg" width="{doc_w}%" '
+                   f'alt="Design doc: {esc(p["name"])}" /></a>')
+            return main + doc
+        img = f'<img src="assets/project-{p["slug"]}.svg" width="100%" alt="{alt}" />'
+        return f'<a href="{esc(p["url"])}">{img}</a>' if p["url"] else img
 
     projects = "\n\n".join(project_img(p) for p in PROJECTS)
     if SHOW_STATS:
@@ -720,6 +772,8 @@ def main():
         files[f"cta-{icon}.svg"] = cta(label, icon)
     for i, p in enumerate(PROJECTS, 1):
         files[f"project-{p['slug']}.svg"] = project(i, p)
+        if p.get("doc"):
+            files[f"doc-{p['slug']}.svg"] = doc_box(p)
     stats_path = ASSETS / "github-stats.svg"
     if not SHOW_STATS:
         stats_path.unlink(missing_ok=True)
