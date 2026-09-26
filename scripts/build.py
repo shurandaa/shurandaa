@@ -113,8 +113,8 @@ PROJECTS = [
         "url": "https://github.com/TianWang0810/facial-dynamics/blob/main/README.md",
     },
     {
-        "slug": "echomind",
-        "name": "EchoMind · Multi-Agent Customer Support",
+        "slug": "switchboard",
+        "name": "Switchboard · Multi-Agent Customer Support",
         "desc": "Multi-agent support runtime: intent fusion, agent routing, RAG, memory, LLM-as-Judge.",
         "tags": ["Python", "FastAPI", "Claude", "Redis", "ChromaDB"],
         "impact": "",

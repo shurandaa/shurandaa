@@ -20,7 +20,7 @@
 
 <a href="https://github.com/TianWang0810/facial-dynamics/blob/main/README.md"><img src="assets/project-facial-dynamics.svg" width="100%" alt="facial-dynamics · Semantic Tokens for Facial Expressions — Readable, editable text tokens for facial expressions: encode, edit meaning, decode. (Python, MediaPipe, ARKit Blendshapes, Multimodal, Semantic Codec)" /></a>
 
-<a href="https://54.209.58.120.sslip.io"><img src="assets/project-echomind.svg" width="100%" alt="EchoMind · Multi-Agent Customer Support — Multi-agent support runtime: intent fusion, agent routing, RAG, memory, LLM-as-Judge. (Python, FastAPI, Claude, Redis, ChromaDB)" /></a>
+<a href="https://54.209.58.120.sslip.io"><img src="assets/project-switchboard.svg" width="100%" alt="Switchboard · Multi-Agent Customer Support — Multi-agent support runtime: intent fusion, agent routing, RAG, memory, LLM-as-Judge. (Python, FastAPI, Claude, Redis, ChromaDB)" /></a>
 
 <a href="https://github.com/shurandaa?tab=repositories"><img src="assets/project-inference-gateway.svg" width="100%" alt="High-Performance AI Inference Gateway — An OpenAI-compatible gateway with request batching, caching, routing, and rate limiting. (Rust, Go, Redis, Docker, gRPC)" /></a>
 
