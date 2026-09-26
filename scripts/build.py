@@ -571,8 +571,9 @@ def section(title):
 
 
 PROJECT_H = 196
-DOC_W = 245                 # width of the side "Design Doc" box
-MAIN_W = 1000 - DOC_W       # project card width when it shares a row with a doc box
+# Cards with a design doc are drawn full-width, then cut at SPLIT_X into two images so the
+# left part can link to the demo and the right part (the doc tile) to the design doc.
+SPLIT_X = 700
 
 
 def project(i, p):
@@ -627,32 +628,40 @@ def _project_header(i, p, W, H):
 
 
 def project_with_doc(i, p):
-    """Main card (links to the demo) — status sits inline at the top right."""
-    W, H = MAIN_W, PROJECT_H
+    """Full-width card: project info (→ demo) on the left, a Design Doc tile (→ doc) on the right."""
+    W, H = 1000, PROJECT_H
     b, defs = _project_header(i, p, W, H)
+    # demo status, top right of the left part
     link = p.get("link_label", "view on GitHub  ↗").replace("  ", " ")
-    b += text(W - 30, 44, link, 12.5, CYAN, "m", 500, "end")
+    right = SPLIT_X - 14
+    b += text(right, 44, link, 12, CYAN, "m", 500, "end")
     status = p.get("status", "In active development")
-    sx = W - 30 - mono_w(link, 12.5) - 18
-    b += text(sx, 44, status, 13, TEXT, "s", 600, "end")
-    b += f'<circle cx="{sx - len(status) * 7.2 - 10:.0f}" cy="40" r="4" fill="{GREEN}"/>'
+    sx = right - mono_w(link, 12) - 16
+    b += text(sx, 44, status, 12.5, TEXT, "s", 600, "end")
+    b += f'<circle cx="{sx - len(status) * 6.9 - 10:.0f}" cy="40" r="4" fill="{GREEN}"/>'
+    # design-doc tile, same place as the status tile on other cards
+    bx, bw = 716, 250
+    b += (f'<rect x="{bx}" y="30" width="{bw}" height="{H - 60}" rx="8" fill="{TILE_BG}" stroke="{BORDER}" '
+          f'stroke-opacity=".35"/>\n')
+    b += text(bx + 18, 60, "DESIGN DOC", 10.5, MUTED, "m", 600, extra='letter-spacing="1"')
+    gx, gy = bx + 18, 74
+    b += (f'<path d="M{gx} {gy}h16l7 7v22h-23z" fill="{CARD_BG}" stroke="{CYAN}" stroke-width="1.4" stroke-linejoin="round"/>'
+          f'<path d="M{gx + 16} {gy}v7h7" fill="none" stroke="{CYAN}" stroke-width="1.4" stroke-linejoin="round"/>'
+          f'<path d="M{gx + 5} {gy + 13}h13M{gx + 5} {gy + 18}h13M{gx + 5} {gy + 23}h8" stroke="{VIOLET}" stroke-width="1.4" stroke-linecap="round"/>')
+    b += text(gx + 34, gy + 11, "Architecture, diagrams", 13, TEXT, "s", 600)
+    b += text(gx + 34, gy + 28, "& design trade-offs", 13, TEXT, "s", 600)
+    b += f'<path d="M{bx + 18} 118h{bw - 36}" stroke="{BORDER}" stroke-opacity=".3"/>'
+    b += text(bx + 18, 146, "read the design doc  ↗", 13, CYAN, "m", 500)
     return svg(W, H, b, defs)
 
 
-def doc_box(p):
-    """Companion box that links to the project's design doc."""
-    W, H = DOC_W, PROJECT_H
-    b = card(M, M, W - 2 * M, H - 2 * M)
-    b += text(26, 44, "DESIGN DOC", 11, MUTED, "m", 600, extra='letter-spacing="1.4"')
-    # document glyph
-    x0, y0 = 26, 62
-    b += (f'<path d="M{x0} {y0}h26l12 12v34h-38z" fill="{TILE_BG}" stroke="{CYAN}" stroke-width="1.6" stroke-linejoin="round"/>'
-          f'<path d="M{x0 + 26} {y0}v12h12" fill="none" stroke="{CYAN}" stroke-width="1.6" stroke-linejoin="round"/>'
-          f'<path d="M{x0 + 8} {y0 + 22}h22M{x0 + 8} {y0 + 30}h22M{x0 + 8} {y0 + 38}h14" stroke="{VIOLET}" stroke-width="1.6" stroke-linecap="round"/>')
-    b += text(26, 136, "Architecture, diagrams", 13.5, TEXT, "s", 600)
-    b += text(26, 155, "& design trade-offs", 13.5, TEXT, "s", 600)
-    b += text(26, 181, "read the doc ↗", 12.5, CYAN, "m", 500)
-    return svg(W, H, b)
+def split_svg(full: str, x: int) -> tuple[str, str]:
+    """Cut a 1000-wide card at x into two seamless SVGs (same drawing, cropped viewBoxes)."""
+    head = f'width="1000" height="{PROJECT_H}" viewBox="0 0 1000 {PROJECT_H}"'
+    assert head in full
+    left = full.replace(head, f'width="{x}" height="{PROJECT_H}" viewBox="0 0 {x} {PROJECT_H}"', 1)
+    right = full.replace(head, f'width="{1000 - x}" height="{PROJECT_H}" viewBox="{x} 0 {1000 - x} {PROJECT_H}"', 1)
+    return left, right
 
 
 def timeline(rows):
@@ -698,11 +707,10 @@ def readme(ctas):
     def project_img(p):
         alt = f'{esc(p["name"])} — {esc(p["desc"])} ({esc(", ".join(p["tags"]))})'
         if p.get("doc"):
-            # Two boxes in one row, no whitespace between them so they never wrap; equal heights.
-            main_w = 75.4
-            doc_w = round(main_w * DOC_W / MAIN_W, 2)
-            main = f'<a href="{esc(p["url"])}"><img src="assets/project-{p["slug"]}.svg" width="{main_w}%" alt="{alt}" /></a>'
-            doc = (f'<a href="{esc(p["doc"])}"><img src="assets/doc-{p["slug"]}.svg" width="{doc_w}%" '
+            # One card cut into two images (no whitespace between, so the seam is invisible).
+            lw = SPLIT_X / 10
+            main = f'<a href="{esc(p["url"])}"><img src="assets/project-{p["slug"]}.svg" width="{lw:g}%" alt="{alt}" /></a>'
+            doc = (f'<a href="{esc(p["doc"])}"><img src="assets/project-{p["slug"]}-doc.svg" width="{100 - lw:g}%" '
                    f'alt="Design doc: {esc(p["name"])}" /></a>')
             return main + doc
         img = f'<img src="assets/project-{p["slug"]}.svg" width="100%" alt="{alt}" />'
@@ -771,9 +779,10 @@ def main():
     for label, icon, _ in LINKS:
         files[f"cta-{icon}.svg"] = cta(label, icon)
     for i, p in enumerate(PROJECTS, 1):
-        files[f"project-{p['slug']}.svg"] = project(i, p)
         if p.get("doc"):
-            files[f"doc-{p['slug']}.svg"] = doc_box(p)
+            files[f"project-{p['slug']}.svg"], files[f"project-{p['slug']}-doc.svg"] = split_svg(project(i, p), SPLIT_X)
+        else:
+            files[f"project-{p['slug']}.svg"] = project(i, p)
     stats_path = ASSETS / "github-stats.svg"
     if not SHOW_STATS:
         stats_path.unlink(missing_ok=True)
