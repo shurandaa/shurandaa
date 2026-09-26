@@ -11,7 +11,7 @@
 <circle cx="58" cy="24" r="5" fill="#1a7f37" fill-opacity=".8"/>
 <text x="340.0" y="28" class="m" font-size="12" font-weight="400" fill="#59636e" text-anchor="middle" >shurandaa@seattle: ~ — zsh</text>
 <text x="30" y="78" class="m" font-size="13.5"><tspan fill="#1a7f37">$</tspan><tspan fill="#1f2328" font-weight="600"> whoami</tspan></text>
-<text x="30" y="103" class="m" font-size="13.5" font-weight="400" fill="#31373d" text-anchor="start" >MSCS @ Northeastern University, Seattle · Amazon SDE Intern</text>
+<text x="30" y="103" class="m" font-size="13.5" font-weight="400" fill="#31373d" text-anchor="start" >MSCS @ Northeastern University, Seattle · ex-Amazon SWE Intern</text>
 <text x="30" y="138" class="m" font-size="13.5"><tspan fill="#1a7f37">$</tspan><tspan fill="#1f2328" font-weight="600"> current_focus</tspan></text>
 <text x="30" y="163" class="m" font-size="13.5"><tspan fill="#0969da">&gt;</tspan><tspan fill="#31373d"> Building AI-native developer infrastructure</tspan></text>
 <text x="30" y="188" class="m" font-size="13.5"><tspan fill="#0969da">&gt;</tspan><tspan fill="#31373d"> Working on LLM agents and distributed systems</tspan></text>
