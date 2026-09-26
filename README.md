@@ -13,7 +13,7 @@
 
 <a href="mailto:shuranz330@gmail.com"><picture><source media="(prefers-color-scheme: light)" srcset="assets/contact-light.svg" /><img src="assets/contact.svg" width="49.9%" alt="Contact — Email: shuranz330@gmail.com · Phone: +1 (206) 843-0550 · Location: Seattle, WA · Status: Open to 2027 New Grad SWE / MLE roles" /></picture></a><picture><source media="(prefers-color-scheme: light)" srcset="assets/skills-light.svg" /><img src="assets/skills.svg" width="49.9%" alt="Languages: Java, Python, Kotlin, C++, C#, Go, Rust, TypeScript, JavaScript, SQL | Backend / Systems: Spring Boot, FastAPI, Flask, Node.js, Redis, PostgreSQL, MySQL, Docker | AI: LLM, RAG, LangChain, AWS Bedrock, MCP, Agent Systems | Cloud: AWS, GCP, CDK, CI/CD" /></picture>
 
-<picture><source media="(prefers-color-scheme: light)" srcset="assets/metrics-light.svg" /><img src="assets/metrics.svg" width="100%" alt="500+ DSA problems solved · 2+ yrs engineering experience · AI Infra &amp; distributed systems · 2027 new grad · SWE / MLE" /></picture>
+<picture><source media="(prefers-color-scheme: light)" srcset="assets/metrics-light.svg" /><img src="assets/metrics.svg" width="100%" alt="↓80% on-call triage time @ AWS · 3.8 GPA · MSCS @ Northeastern · ~8K LOC agent runtime, from scratch · 2027 new grad · SWE / MLE" /></picture>
 
 <picture><source media="(prefers-color-scheme: light)" srcset="assets/section-projects-light.svg" /><img src="assets/section-projects.svg" width="100%" alt="Featured Projects" /></picture>
 
