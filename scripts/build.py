@@ -123,12 +123,14 @@ PROJECTS = [
         "link_label": "try the live demo  ↗",
     },
     {
-        "slug": "inference-gateway",
-        "name": "High-Performance AI Inference Gateway",
-        "desc": "An OpenAI-compatible gateway with request batching, caching, routing, and rate limiting.",
-        "tags": ["Rust", "Go", "Redis", "Docker", "gRPC"],
+        "slug": "keel",
+        "name": "Keel · Evolvable Coding-Agent Runtime",
+        "desc": "Agent harness: permissioned tools, sub-agents, self-evolving Skills, memory, MCP.",
+        "tags": ["Python", "Claude", "MCP", "Sub-Agents", "Agent Skills"],
         "impact": "",
-        "url": f"https://github.com/{USERNAME}?tab=repositories",
+        "status": "Live demo",
+        "url": "https://keel.54.209.58.120.sslip.io",
+        "link_label": "try the live demo  ↗",
     },
 ]
 

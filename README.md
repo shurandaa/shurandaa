@@ -22,7 +22,7 @@
 
 <a href="https://54.209.58.120.sslip.io"><img src="assets/project-switchboard.svg" width="100%" alt="Switchboard · Multi-Agent Customer Support — Multi-agent support runtime: intent fusion, agent routing, RAG, memory, LLM-as-Judge. (Python, FastAPI, Claude, Redis, ChromaDB)" /></a>
 
-<a href="https://github.com/shurandaa?tab=repositories"><img src="assets/project-inference-gateway.svg" width="100%" alt="High-Performance AI Inference Gateway — An OpenAI-compatible gateway with request batching, caching, routing, and rate limiting. (Rust, Go, Redis, Docker, gRPC)" /></a>
+<a href="https://keel.54.209.58.120.sslip.io"><img src="assets/project-keel.svg" width="100%" alt="Keel · Evolvable Coding-Agent Runtime — Agent harness: permissioned tools, sub-agents, self-evolving Skills, memory, MCP. (Python, Claude, MCP, Sub-Agents, Agent Skills)" /></a>
 
 <img src="assets/section-experience.svg" width="100%" alt="Experience" />
 
