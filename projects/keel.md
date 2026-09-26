@@ -18,7 +18,7 @@
 
 Keel's thesis is that **the harness matters more than the prompt**. The model only *proposes* actions. The runtime decides what's allowed, executes it, writes results back, compacts context and keeps what was learned.
 
-| | |
+| Area | What it does |
 |---|---|
 | 🔁 **Agent loop** | Full tool-call loop over **Anthropic and OpenAI** protocols, with streaming and early tool execution |
 | 🛡️ **Runtime safety** | Plan Mode hard-blocks writes and shell; edits require a prior read with mtime revalidation; deny/allow rules resolve before permission mode |
