@@ -136,6 +136,17 @@ PROJECTS = [
         "link_label": "try the live demo  ↗",
         "doc": f"https://github.com/{USERNAME}/{USERNAME}/blob/main/projects/keel.md",
     },
+    {
+        "slug": "dashgrid",
+        "name": "DashGrid · Load-Tested Distributed Food Delivery",
+        "desc": "Six microservices with Kafka, Redis and Postgres, autoscaled on AWS ECS under k6 load.",
+        "tags": ["Java 21", "Spring Boot", "Kafka", "Redis", "AWS ECS"],
+        "impact": "4,500 req/s",
+        "impact_label": "AWS LOAD TEST",
+        "impact_note": "p95 17 ms · ECS 2→9 tasks",
+        "status": "Finished",
+        "url": f"https://github.com/{USERNAME}/dashgrid",
+    },
 ]
 
 # (org, role, dates, location, one-line summary)
