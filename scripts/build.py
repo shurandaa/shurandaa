@@ -89,7 +89,8 @@ METRICS = [
 # impact: a measurable result, e.g. "p99 latency ↓ 38%"; if empty the card shows status instead.
 # status defaults to "In active development"; url empty → card is not linked (e.g. internal work).
 # link_label defaults to "view on GitHub  ↗" (e.g. use "read the case study  ↗" for a write-up).
-# Optional: impact_label (default "IMPACT"), impact_note (small line under the impact), with (collaborator credit).
+# Optional: impact_label (default "IMPACT"), impact_note (small line under the impact), with (collaborator credit),
+# links (list of (label, url) shown as small text links under the card).
 PROJECTS = [
     {
         "slug": "ai-oncall",
@@ -122,6 +123,8 @@ PROJECTS = [
         "status": "Live demo",
         "url": "https://54.209.58.120.sslip.io",
         "link_label": "try the live demo  ↗",
+        "links": [("▶ Live demo", "https://54.209.58.120.sslip.io"),
+                  ("📄 Design doc", f"https://github.com/{USERNAME}/{USERNAME}/blob/main/projects/switchboard.md")],
     },
     {
         "slug": "keel",
@@ -132,6 +135,8 @@ PROJECTS = [
         "status": "Live demo",
         "url": "https://keel.54.209.58.120.sslip.io",
         "link_label": "try the live demo  ↗",
+        "links": [("▶ Live demo", "https://keel.54.209.58.120.sslip.io"),
+                  ("📄 Design doc", f"https://github.com/{USERNAME}/{USERNAME}/blob/main/projects/keel.md")],
     },
 ]
 
@@ -645,7 +650,11 @@ def readme(ctas):
     def project_img(p):
         img = (f'<img src="assets/project-{p["slug"]}.svg" width="100%" '
                f'alt="{esc(p["name"])} — {esc(p["desc"])} ({esc(", ".join(p["tags"]))})" />')
-        return f'<a href="{esc(p["url"])}">{img}</a>' if p["url"] else img
+        out = f'<a href="{esc(p["url"])}">{img}</a>' if p["url"] else img
+        if p.get("links"):  # small text links under the card, e.g. demo + design doc
+            out += "<br><sub>" + " &nbsp;·&nbsp; ".join(
+                f'<a href="{esc(u)}">{esc(t)}</a>' for t, u in p["links"]) + "</sub>"
+        return out
 
     projects = "\n\n".join(project_img(p) for p in PROJECTS)
     if SHOW_STATS:
