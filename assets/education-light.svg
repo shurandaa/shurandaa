@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="234" viewBox="0 0 1000 234" fill="none">
+<defs>
+<filter id="glow" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="3"/></filter>
+<style>.s{font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif}.m{font-family:ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace}</style>
+</defs>
+<rect x="6" y="6" width="988" height="222" rx="10" stroke="#0969da" stroke-opacity=".35" stroke-width="2" filter="url(#glow)"/>
+<rect x="6" y="6" width="988" height="222" rx="10" fill="#ffffff" stroke="#54aeff" stroke-opacity=".75"/>
+<path d="M36 58V174" stroke="#54aeff" stroke-opacity=".5" stroke-width="1.5"/><circle cx="36" cy="58" r="6" fill="#ffffff" stroke="#0969da" stroke-width="2"/><text x="60" y="64" class="s" font-size="18" font-weight="700" fill="#1f2328">Northeastern University<tspan class="m" font-size="13" font-weight="500" fill="#0969da" dx="12">M.S. Computer Science · GPA 3.8 / 4.0</tspan></text>
+<text x="964" y="63" class="m" font-size="12.5" font-weight="500" fill="#1f2328" text-anchor="end" >Sep 2025 – Jun 2027</text>
+<text x="964" y="82" class="m" font-size="12" font-weight="400" fill="#59636e" text-anchor="end" >Seattle, WA</text>
+<circle cx="36" cy="116" r="6" fill="#ffffff" stroke="#8250df" stroke-width="2"/><text x="60" y="122" class="s" font-size="18" font-weight="700" fill="#1f2328">University of California, Irvine<tspan class="m" font-size="13" font-weight="500" fill="#8250df" dx="12">UCInspire Summer Research Program · GPA 4.0 / 4.0</tspan></text>
+<text x="964" y="121" class="m" font-size="12.5" font-weight="500" fill="#1f2328" text-anchor="end" >Jun 2024 – Aug 2024</text>
+<text x="964" y="140" class="m" font-size="12" font-weight="400" fill="#59636e" text-anchor="end" >Irvine, CA</text>
+<circle cx="36" cy="174" r="6" fill="#ffffff" stroke="#1a7f37" stroke-width="2"/><text x="60" y="180" class="s" font-size="18" font-weight="700" fill="#1f2328">Chongqing University<tspan class="m" font-size="13" font-weight="500" fill="#1a7f37" dx="12">B.Eng. Software Engineering · GPA 3.6 / 4.0</tspan></text>
+<text x="964" y="179" class="m" font-size="12.5" font-weight="500" fill="#1f2328" text-anchor="end" >Sep 2021 – Jun 2025</text>
+<text x="964" y="198" class="m" font-size="12" font-weight="400" fill="#59636e" text-anchor="end" >Chongqing, China</text>
+
+</svg>

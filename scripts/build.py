@@ -40,13 +40,13 @@ HERO = {
 # Empty URL → that button is left out of the README.
 LINKS = [
     ("Blog", "blog", ""),
-    ("LinkedIn", "linkedin", ""),
+    ("LinkedIn", "linkedin", "https://www.linkedin.com/in/shuran-zhao-990030379/"),
     ("Email", "email", "mailto:shuranz330@gmail.com"),
     ("Resume", "resume", ""),
     ("Portfolio", "portfolio", ""),
 ]
 
-WHOAMI = "MSCS @ Northeastern University, Seattle · Amazon SDE Intern"
+WHOAMI = "MSCS @ Northeastern University, Seattle · ex-Amazon SWE Intern"
 STACK = "Java / Python / Rust / Go / TypeScript / AWS"
 
 # (icon, label, value) rows of the Contact card; the whole card links to CONTACT_URL.
@@ -67,15 +67,16 @@ FOCUS = [
 ]
 
 SKILLS = [
-    ("Languages", "#58a6ff", ["Java", "Python", "Kotlin", "C++", "Go", "Rust", "TypeScript", "SQL"]),
-    ("Backend / Systems", "#39c5cf", ["Spring Boot", "Node.js", "Redis", "PostgreSQL", "Docker", "REST"]),
+    ("Languages", "#58a6ff", ["Java", "Python", "Kotlin", "C++", "C#", "Go", "Rust", "TypeScript", "JavaScript", "SQL"]),
+    ("Backend / Systems", "#39c5cf", ["Spring Boot", "FastAPI", "Flask", "Node.js", "Redis", "PostgreSQL", "MySQL", "Docker"]),
     ("AI", "#a371f7", ["LLM", "RAG", "LangChain", "AWS Bedrock", "MCP", "Agent Systems"]),
-    ("Cloud", "#56d4bc", ["AWS", "SageMaker", "EMR"]),
+    ("Cloud", "#56d4bc", ["AWS", "GCP", "CDK", "CI/CD"]),
 ]
 
 # Skills with a logo on skillicons.dev render as icons; the rest render as text chips.
 SKILL_ICONS = {"Java": "java", "Python": "py", "Kotlin": "kotlin", "C++": "cpp", "Go": "go", "Rust": "rust",
-               "TypeScript": "ts", "Spring Boot": "spring", "Node.js": "nodejs", "Redis": "redis",
+               "TypeScript": "ts", "JavaScript": "js", "C#": "cs", "FastAPI": "fastapi", "Flask": "flask",
+               "MySQL": "mysql", "GCP": "gcp", "Spring Boot": "spring", "Node.js": "nodejs", "Redis": "redis",
                "PostgreSQL": "postgres", "Docker": "docker", "AWS": "aws"}
 
 METRICS = [
@@ -134,11 +135,21 @@ PROJECTS = [
     },
 ]
 
+# (org, role, dates, location, one-line summary)
 EXPERIENCE = [
-    ("Amazon", "SDE Intern",
-     "AI infrastructure & distributed systems · automated incident investigation · significantly reduced triage effort"),
-    ("Northeastern University", "Research",
-     "Applied AI & multimodal systems"),
+    ("Amazon Web Services", "Software Engineer Intern", "Jun 2026 – Aug 2026", "San Jose, CA",
+     "AI-for-Ops agent: −80% on-call triage, 90%+ auto root cause, −60% tokens via custom MCP"),
+    ("Spatioform Lab", "Applied AI Researcher", "Jan 2026 – Present", "Seattle, WA",
+     "Built Keel, a Claude Code-style agent runtime (~8K LOC): tool loop, MCP, sub-agents, Skills"),
+    ("Tiandong Technology", "Software Engineer Intern", "Feb 2025 – Jun 2025", "Chongqing, China",
+     "Built Switchboard: 19-class intent fusion, multi-agent routing, agent-invoked RAG, evals"),
+]
+
+# (school, degree, GPA, dates, location)
+EDUCATION = [
+    ("Northeastern University", "M.S. Computer Science", "GPA 3.8 / 4.0", "Sep 2025 – Jun 2027", "Seattle, WA"),
+    ("University of California, Irvine", "UCInspire Summer Research Program", "GPA 4.0 / 4.0", "Jun 2024 – Aug 2024", "Irvine, CA"),
+    ("Chongqing University", "B.Eng. Software Engineering", "GPA 3.6 / 4.0", "Sep 2021 – Jun 2025", "Chongqing, China"),
 ]
 
 # ─────────────────────────────── THEME ─────────────────────────────────
@@ -591,22 +602,33 @@ def project(i, p):
     return svg(W, H, b, defs)
 
 
-def experience():
-    W = 1000
-    H = 60 + 74 * len(EXPERIENCE)
+def timeline(rows):
+    """rows: (title, subtitle, dates, location, detail-or-None)."""
+    W, step = 1000, (74 if any(r[4] for r in rows) else 58)
+    H = 60 + step * len(rows)
     b = card(M, M, W - 2 * M, H - 2 * M)
-    x = 36
-    top, bottom = 58, 58 + 74 * (len(EXPERIENCE) - 1)
-    b += f'<path d="M{x} {top}V{bottom}" stroke="{BORDER}" stroke-opacity=".5" stroke-width="1.5"/>'
-    for i, (org, role, detail) in enumerate(EXPERIENCE):
-        y = top + i * 74
-        color = CYAN if i == 0 else VIOLET
+    x, top = 36, 58
+    b += f'<path d="M{x} {top}V{top + step * (len(rows) - 1)}" stroke="{BORDER}" stroke-opacity=".5" stroke-width="1.5"/>'
+    for i, (title, sub, dates, loc, detail) in enumerate(rows):
+        y = top + i * step
+        color = [CYAN, VIOLET, GREEN][i % 3]
         b += f'<circle cx="{x}" cy="{y}" r="6" fill="{CARD_BG}" stroke="{color}" stroke-width="2"/>'
         b += (f'<text x="{x + 24}" y="{y + 6}" class="s" font-size="18" font-weight="700" fill="{TEXT}">'
-              f'{esc(org)}<tspan class="m" font-size="13" font-weight="500" fill="{color}" dx="12">'
-              f'{esc(role)}</tspan></text>\n')
-        b += text(x + 24, y + 32, detail, 14, MUTED)
+              f'{esc(title)}<tspan class="m" font-size="13" font-weight="500" fill="{color}" dx="12">'
+              f'{esc(sub)}</tspan></text>\n')
+        b += text(W - 36, y + 5, dates, 12.5, TEXT, "m", 500, "end")
+        b += text(W - 36, y + 24, loc, 12, MUTED, "m", 400, "end")
+        if detail:
+            b += text(x + 24, y + 32, detail, 14, MUTED)
     return svg(W, H, b)
+
+
+def experience():
+    return timeline([(o, r, d, l, s) for o, r, d, l, s in EXPERIENCE])
+
+
+def education():
+    return timeline([(sch, f"{deg} · {gpa}", d, l, None) for sch, deg, gpa, d, l in EDUCATION])
 
 
 # ─────────────────────────────── README ────────────────────────────────
@@ -615,7 +637,8 @@ def readme(ctas):
     focus_alt = f"$ whoami — {WHOAMI}. $ current_focus — " + "; ".join(FOCUS) + f". $ stack — {STACK}"
     skills_alt = " | ".join(f"{g}: {', '.join(items)}" for g, _, items in SKILLS)
     metrics_alt = " · ".join(f"{v} {l}" for v, l, _ in METRICS)
-    exp_alt = " | ".join(f"{o} — {r}: {d}" for o, r, d in EXPERIENCE)
+    exp_alt = " | ".join(f"{o} — {r} ({d}, {l}): {s}" for o, r, d, l, s in EXPERIENCE)
+    edu_alt = " | ".join(f"{sch} — {deg}, {gpa} ({d})" for sch, deg, gpa, d, l in EDUCATION)
     buttons = "\n".join(
         f'  <a href="{esc(url)}"><img src="assets/cta-{icon}.svg" height="34" alt="{esc(label)}" /></a>'
         for label, icon, url in ctas)
@@ -660,6 +683,10 @@ def readme(ctas):
 
 <img src="assets/experience.svg" width="100%" alt="{esc(exp_alt)}" />
 
+<img src="assets/section-education.svg" width="100%" alt="Education" />
+
+<img src="assets/education.svg" width="100%" alt="{esc(edu_alt)}" />
+
 {footer}</div>
 """
 
@@ -676,6 +703,8 @@ def main():
         "section-projects.svg": section("FEATURED PROJECTS"),
         "section-experience.svg": section("EXPERIENCE"),
         "experience.svg": experience(),
+        "section-education.svg": section("EDUCATION"),
+        "education.svg": education(),
     }
     ctas = [(label, icon, url) for label, icon, url in LINKS if url]
     for label, icon, _ in LINKS:
