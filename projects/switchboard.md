@@ -18,7 +18,7 @@
 
 Switchboard is not a chatbot wrapper. It is a runtime that closes the loop between **understanding a request, routing it to the right specialist agents, calling tools safely, remembering context, monitoring itself, and grading its own answers**.
 
-| | |
+| Area | What it does |
 |---|---|
 | 🎯 **Intent** | 19 intent classes from a 3-way fusion: LLM + vector similarity + keyword patterns |
 | 🔀 **Routing** | Contract-scoped primary and supporting agents, run in parallel and merged |
