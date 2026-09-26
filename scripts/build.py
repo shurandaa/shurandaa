@@ -156,6 +156,43 @@ SANS = "-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-se
 MONO = "ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace"
 M = 6  # outer margin so the glow isn't clipped and side-by-side cards get a gap
 
+# Light theme: every SVG is also rendered as <name>-light.svg by swapping the dark palette's
+# colors for GitHub-light equivalents, and README.md picks one per viewer via <picture>.
+LIGHT_PALETTE = {
+    "#0a1424": "#ffffff",  # card
+    "#0d1b30": "#f6f8fa",  # tile
+    "#1f6feb": "#54aeff",  # border
+    "#00b7ff": "#0969da",  # glow / cyan accent
+    "#e6edf3": "#1f2328",  # text (also the cat's fur → a black cat)
+    "#c9d1d9": "#31373d",  # secondary text
+    "#8b949e": "#59636e",  # muted
+    "#a371f7": "#8250df",  # violet
+    "#3fb950": "#1a7f37",  # green
+    "#58a6ff": "#0550ae",  # blue
+    "#39c5cf": "#1b7c83",  # teal
+    "#56d4bc": "#0e8a78",  # mint
+    "#d29922": "#9a6700",  # amber
+    "#f0883e": "#bc4c00",  # orange
+    "#f778ba": "#bf3989",  # pink
+}
+_HEX = re.compile("|".join(map(re.escape, LIGHT_PALETTE)), re.I)
+
+
+def to_light(svg_text: str) -> str:
+    """Recolor a dark-theme SVG; embedded skill icons keep their own colors."""
+    parts = re.split(r'(<svg x="[^"]*" y="[^"]*" width="\d+" height="\d+".*?</svg>\s*</svg>)', svg_text, flags=re.S)
+    return "".join(p if i % 2 else _HEX.sub(lambda m: LIGHT_PALETTE[m.group(0).lower()], p)
+                   for i, p in enumerate(parts))
+
+
+def themed_images(readme_text: str) -> str:
+    """Wrap every asset <img> in a <picture> that serves the -light.svg to light-mode viewers."""
+    def wrap(m):
+        base, rest = m.group(1), m.group(2)
+        return (f'<picture><source media="(prefers-color-scheme: light)" srcset="{base}-light.svg" />'
+                f'<img src="{base}.svg"{rest}/></picture>')
+    return re.sub(r'<img src="(assets/[^"?]+)\.svg"([^>]*)/>', wrap, readme_text)
+
 
 def esc(s):
     return html.escape(str(s), quote=True)
@@ -658,9 +695,13 @@ def main():
         files["github-stats.svg"] = github_stats([(l, "—", c) for l, c in [
             ("Total Stars", "#d29922"), ("Total Commits", CYAN), ("Total PRs", VIOLET),
             ("Total Issues", "#58a6ff"), ("Contributions", GREEN), ("Current Streak", "#f0883e")]])
+    if SHOW_STATS and "github-stats.svg" not in files and stats_path.exists():
+        files["github-stats.svg"] = stats_path.read_text()  # keep the last good card, recolor it too
+    for name, content in list(files.items()):
+        files[name.replace(".svg", "-light.svg")] = to_light(content)
     for name, content in files.items():
         (ASSETS / name).write_text(content)
-    (ROOT / "README.md").write_text(readme(ctas))
+    (ROOT / "README.md").write_text(themed_images(readme(ctas)))
     print(f"wrote {len(files)} assets + README.md")
 
 

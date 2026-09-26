@@ -2,30 +2,30 @@
 
 <div align="center">
 
-<img src="assets/header.svg" width="100%" alt="Hi, I&#x27;m Shuran Zhao. An AI-Native Software Engineer. Building AI infrastructure, distributed systems, and intelligent developer tools." />
+<picture><source media="(prefers-color-scheme: light)" srcset="assets/header-light.svg" /><img src="assets/header.svg" width="100%" alt="Hi, I&#x27;m Shuran Zhao. An AI-Native Software Engineer. Building AI infrastructure, distributed systems, and intelligent developer tools." /></picture>
 
 <p>
-  <a href="mailto:shuranz330@gmail.com"><img src="assets/cta-email.svg" height="34" alt="Email" /></a>
+  <a href="mailto:shuranz330@gmail.com"><picture><source media="(prefers-color-scheme: light)" srcset="assets/cta-email-light.svg" /><img src="assets/cta-email.svg" height="34" alt="Email" /></picture></a>
 </p>
 
-<img src="assets/current-focus.svg" width="66.6%" alt="$ whoami — MSCS @ Northeastern University, Seattle · Amazon SDE Intern. $ current_focus — Building AI-native developer infrastructure; Working on LLM agents and distributed systems; Researching applied AI / multimodal systems; Learning Rust, systems design, and high-performance inference; Preparing for 2027 New Grad SWE / MLE roles. $ stack — Java / Python / Rust / Go / TypeScript / AWS" /><img src="assets/mascot.svg" width="33.3%" alt="Pixel-art cat coding on a laptop" />
+<picture><source media="(prefers-color-scheme: light)" srcset="assets/current-focus-light.svg" /><img src="assets/current-focus.svg" width="66.6%" alt="$ whoami — MSCS @ Northeastern University, Seattle · Amazon SDE Intern. $ current_focus — Building AI-native developer infrastructure; Working on LLM agents and distributed systems; Researching applied AI / multimodal systems; Learning Rust, systems design, and high-performance inference; Preparing for 2027 New Grad SWE / MLE roles. $ stack — Java / Python / Rust / Go / TypeScript / AWS" /></picture><picture><source media="(prefers-color-scheme: light)" srcset="assets/mascot-light.svg" /><img src="assets/mascot.svg" width="33.3%" alt="Pixel-art cat coding on a laptop" /></picture>
 
-<a href="mailto:shuranz330@gmail.com"><img src="assets/contact.svg" width="49.9%" alt="Contact — Email: shuranz330@gmail.com · Phone: +1 (206) 843-0550 · Location: Seattle, WA · Status: Open to 2027 New Grad SWE / MLE roles" /></a><img src="assets/skills.svg" width="49.9%" alt="Languages: Java, Python, Kotlin, C++, Go, Rust, TypeScript, SQL | Backend / Systems: Spring Boot, Node.js, Redis, PostgreSQL, Docker, REST | AI: LLM, RAG, LangChain, AWS Bedrock, MCP, Agent Systems | Cloud: AWS, SageMaker, EMR" />
+<a href="mailto:shuranz330@gmail.com"><picture><source media="(prefers-color-scheme: light)" srcset="assets/contact-light.svg" /><img src="assets/contact.svg" width="49.9%" alt="Contact — Email: shuranz330@gmail.com · Phone: +1 (206) 843-0550 · Location: Seattle, WA · Status: Open to 2027 New Grad SWE / MLE roles" /></picture></a><picture><source media="(prefers-color-scheme: light)" srcset="assets/skills-light.svg" /><img src="assets/skills.svg" width="49.9%" alt="Languages: Java, Python, Kotlin, C++, Go, Rust, TypeScript, SQL | Backend / Systems: Spring Boot, Node.js, Redis, PostgreSQL, Docker, REST | AI: LLM, RAG, LangChain, AWS Bedrock, MCP, Agent Systems | Cloud: AWS, SageMaker, EMR" /></picture>
 
-<img src="assets/metrics.svg" width="100%" alt="500+ DSA problems solved · 2+ yrs engineering experience · AI Infra &amp; distributed systems · 2027 new grad · SWE / MLE" />
+<picture><source media="(prefers-color-scheme: light)" srcset="assets/metrics-light.svg" /><img src="assets/metrics.svg" width="100%" alt="500+ DSA problems solved · 2+ yrs engineering experience · AI Infra &amp; distributed systems · 2027 new grad · SWE / MLE" /></picture>
 
-<img src="assets/section-projects.svg" width="100%" alt="Featured Projects" />
+<picture><source media="(prefers-color-scheme: light)" srcset="assets/section-projects-light.svg" /><img src="assets/section-projects.svg" width="100%" alt="Featured Projects" /></picture>
 
-<a href="https://github.com/shurandaa/shurandaa/blob/main/projects/ai-oncall.md"><img src="assets/project-ai-oncall.svg" width="100%" alt="AI On-Call · Incident Investigation Platform — Multi-agent system that auto-investigates CI/CD failures, from alarm to one-click fix. (AWS Bedrock, MCP, AWS CDK, Slack, Multi-Agent)" /></a>
+<a href="https://github.com/shurandaa/shurandaa/blob/main/projects/ai-oncall.md"><picture><source media="(prefers-color-scheme: light)" srcset="assets/project-ai-oncall-light.svg" /><img src="assets/project-ai-oncall.svg" width="100%" alt="AI On-Call · Incident Investigation Platform — Multi-agent system that auto-investigates CI/CD failures, from alarm to one-click fix. (AWS Bedrock, MCP, AWS CDK, Slack, Multi-Agent)" /></picture></a>
 
-<a href="https://github.com/TianWang0810/facial-dynamics/blob/main/README.md"><img src="assets/project-facial-dynamics.svg" width="100%" alt="facial-dynamics · Semantic Tokens for Facial Expressions — Readable, editable text tokens for facial expressions: encode, edit meaning, decode. (Python, MediaPipe, ARKit Blendshapes, Multimodal, Semantic Codec)" /></a>
+<a href="https://github.com/TianWang0810/facial-dynamics/blob/main/README.md"><picture><source media="(prefers-color-scheme: light)" srcset="assets/project-facial-dynamics-light.svg" /><img src="assets/project-facial-dynamics.svg" width="100%" alt="facial-dynamics · Semantic Tokens for Facial Expressions — Readable, editable text tokens for facial expressions: encode, edit meaning, decode. (Python, MediaPipe, ARKit Blendshapes, Multimodal, Semantic Codec)" /></picture></a>
 
-<a href="https://54.209.58.120.sslip.io"><img src="assets/project-switchboard.svg" width="100%" alt="Switchboard · Multi-Agent Customer Support — Multi-agent support runtime: intent fusion, agent routing, RAG, memory, LLM-as-Judge. (Python, FastAPI, Claude, Redis, ChromaDB)" /></a>
+<a href="https://54.209.58.120.sslip.io"><picture><source media="(prefers-color-scheme: light)" srcset="assets/project-switchboard-light.svg" /><img src="assets/project-switchboard.svg" width="100%" alt="Switchboard · Multi-Agent Customer Support — Multi-agent support runtime: intent fusion, agent routing, RAG, memory, LLM-as-Judge. (Python, FastAPI, Claude, Redis, ChromaDB)" /></picture></a>
 
-<a href="https://keel.54.209.58.120.sslip.io"><img src="assets/project-keel.svg" width="100%" alt="Keel · Evolvable Coding-Agent Runtime — Agent harness: permissioned tools, sub-agents, self-evolving Skills, memory, MCP. (Python, Claude, MCP, Sub-Agents, Agent Skills)" /></a>
+<a href="https://keel.54.209.58.120.sslip.io"><picture><source media="(prefers-color-scheme: light)" srcset="assets/project-keel-light.svg" /><img src="assets/project-keel.svg" width="100%" alt="Keel · Evolvable Coding-Agent Runtime — Agent harness: permissioned tools, sub-agents, self-evolving Skills, memory, MCP. (Python, Claude, MCP, Sub-Agents, Agent Skills)" /></picture></a>
 
-<img src="assets/section-experience.svg" width="100%" alt="Experience" />
+<picture><source media="(prefers-color-scheme: light)" srcset="assets/section-experience-light.svg" /><img src="assets/section-experience.svg" width="100%" alt="Experience" /></picture>
 
-<img src="assets/experience.svg" width="100%" alt="Amazon — SDE Intern: AI infrastructure &amp; distributed systems · automated incident investigation · significantly reduced triage effort | Northeastern University — Research: Applied AI &amp; multimodal systems" />
+<picture><source media="(prefers-color-scheme: light)" srcset="assets/experience-light.svg" /><img src="assets/experience.svg" width="100%" alt="Amazon — SDE Intern: AI infrastructure &amp; distributed systems · automated incident investigation · significantly reduced triage effort | Northeastern University — Research: Applied AI &amp; multimodal systems" /></picture>
 
 </div>
